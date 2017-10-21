@@ -22,7 +22,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
         if($resultado->num_rows == 1){
             $datos = $resultado->fetch_assoc();
             
-            $_SESSION['tipo'] = $datos;
+            $_SESSION['usuario'] = $datos;
             echo json_encode(array('error' => false, 'tipo' => $datos['usuario']));
             
         } else {

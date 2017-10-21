@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if(isset($_SESSION['tipo'])){
-        if($_SESSION['tipo']['usuario'] == 'admin'){
-            header('Location: index.php');
+    if(isset($_SESSION['usuario'])){
+        if($_SESSION['usuario']['usuario'] == "admin"){
+            header('Location: admin/');
         }
     }
 ?>

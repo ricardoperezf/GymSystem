@@ -1,3 +1,16 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['usuario'])){
+        if($_SESSION['usuario']['usuario'] == 'admin'){
+            header("Location: ../admin/index.php");
+        }
+    } else {
+        header('Location: ../login.php');
+    }
+
+require_once '../php/conexion.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,7 +228,7 @@
           </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <a class="nav-link" href="../logout.php">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
