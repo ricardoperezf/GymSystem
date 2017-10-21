@@ -11,7 +11,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
     $usuario = $mysqli->real_escape_string($_POST['usuariolg']);
     $pas = $mysqli->real_escape_string($_POST['passlg']);
     
-    if($nueva_consulta = $mysqli->prepare("SELECT usuario, contrasena FROM usuarioadministrador WHERE usuario = ? AND contrasena = ?")){
+    if($nueva_consulta = $mysqli->prepare("SELECT usuario, contrasena FROM administrador WHERE usuario = ? AND contrasena = ?")){
         
         $nueva_consulta->bind_param('ss',$usuario,$pas);
         
