@@ -1,7 +1,7 @@
 <?php
+require 'conexion.php';
 
 if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
-    require 'conexion.php';
     
     sleep(1);
     session_start();
@@ -31,7 +31,5 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
         $nueva_consulta->close();
     }
 }
-
 $mysqli->close();
-
 ?>

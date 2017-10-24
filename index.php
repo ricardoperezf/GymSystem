@@ -5,6 +5,7 @@
             header('Location: admin/');
         }
     }
+require_once "php/login.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
