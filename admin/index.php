@@ -5,7 +5,7 @@
         if($_SESSION['usuario']['usuario'] == 'admin'){
         }
     } else {
-        header('Location: ../login.php');
+        header('Location: ../index.php');
     }
 
 require_once '../php/conexion.php';
@@ -46,13 +46,13 @@ require_once '../php/conexion.php';
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                        <a class="nav-link" href="../charts.html">
+                        <a class="nav-link" href="clientes/clientes.php">
                             <i class="fa fa-fw fa-area-chart"></i>
                             <span class="nav-link-text">Clientes</span>
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                        <a class="nav-link" href="../tables.html">
+                        <a class="nav-link" href="#">
                             <i class="fa fa-fw fa-table"></i>
                             <span class="nav-link-text">Pagos</span>
                         </a>
@@ -64,10 +64,10 @@ require_once '../php/conexion.php';
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseComponents">
                             <li>
-                                <a href="navbar.html">Navbar</a>
+                                <a href="#">Navbar</a>
                             </li>
                             <li>
-                                <a href="cards.html">Cards</a>
+                                <a href="#">Cards</a>
                             </li>
                         </ul>
                     </li>
@@ -78,16 +78,16 @@ require_once '../php/conexion.php';
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                             <li>
-                                <a href="../login.html">Login Page</a>
+                                <a href="#">Login Page</a>
                             </li>
                             <li>
-                                <a href="../register.html">Registration Page</a>
+                                <a href="#">Registration Page</a>
                             </li>
                             <li>
-                                <a href="../forgot-password.html">Forgot Password Page</a>
+                                <a href="#">Forgot Password Page</a>
                             </li>
                             <li>
-                                <a href="../blank.html">Blank Page</a>
+                                <a href="#">Blank Page</a>
                             </li>
                         </ul>
                     </li>
