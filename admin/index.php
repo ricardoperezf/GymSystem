@@ -250,9 +250,9 @@ require_once '../php/conexion.php';
                                 <div class="card-body-icon">
                                     <i class="fa fa-fw fa-comments"></i>
                                 </div>
-                                <div class="mr-5">26 New Messages!</div>
+                                <div class="mr-5">Clientes</div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <a class="card-footer text-white clearfix small z-1" href="clientes/clientes.php">
                                 <span class="float-left">View Details</span>
                                 <span class="float-right">
                 <i class="fa fa-angle-right"></i>
