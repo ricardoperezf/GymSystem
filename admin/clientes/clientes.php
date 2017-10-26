@@ -28,6 +28,8 @@ require_once '../../php/conexion.php';
         <link href="../../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
         <!-- Custom styles for this template-->
         <link href="../../css/sb-admin.css" rel="stylesheet">
+        <!-- Estilos propios de Gym System -->
+        <link rel="stylesheet" href="../../css/estilos.css">
     </head>
 
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -208,7 +210,11 @@ require_once '../../php/conexion.php';
                 <!-- Example DataTables Card-->
                 <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fa fa-table"></i> Información de clientes</div>
+                        <i class="fa fa-table"></i> Información de clientes
+                        <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#add_data_Modal">
+                            <span class="glyphiconAgregar glyphicon-plus" aria-hidden="true"></span>
+                        </button>
+                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
