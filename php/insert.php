@@ -11,7 +11,7 @@
       $oficio = mysqli_real_escape_string($connect, $_POST["oficio"]);
       $estatura = mysqli_real_escape_string($connect, $_POST["estatura"]);
       $edad = mysqli_real_escape_string($connect, $_POST["edad"]);
-      $FechaDeNacimiento = mysqli_real_escape_string($connect, $_POST["FechaDeNacimiento"]);
+      $fechaDeNacimiento = mysqli_real_escape_string($connect, $_POST["fechaDeNacimiento"]);
       $objetivos = mysqli_real_escape_string($connect, $_POST["objetivos"]);
       $habitosAlimenticios = mysqli_real_escape_string($connect, $_POST["habitosAlimenticios"]);
       $enfermedadesYLesiones = mysqli_real_escape_string($connect, $_POST["enfermedadesYLesiones"]);
