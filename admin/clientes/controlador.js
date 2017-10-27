@@ -31,8 +31,52 @@
               alert("cedula is required");
           } else if ($('#direccion').val() == '') {
               alert("direccion is required");
-          } else if ($('#tipoDeEquipo').val() == '') {
-              alert("Tipo de equipo is required");
+          } else if ($('#telefono').val() == '') {
+              alert("telefono is required");
+          } else if ($('#oficio').val() == '') {
+              alert("oficio is required");
+          } else if ($('#estatura').val() == '') {
+              alert("estatura is required");
+          } else if ($('#edad').val() == '') {
+              alert("edad is required");
+          } else if ($('#FechaDeNacimiento').val() == '') {
+              alert("FechaDeNacimiento is required");
+          } else if ($('#objetivos').val() == '') {
+              alert("objetivos is required");
+          } else if ($('#habitosAlimenticios').val() == '') {
+              alert("habitosAlimenticios is required");
+          } else if ($('#enfermedadesYLesiones').val() == '') {
+              alert("enfermedadesYLesiones is required");
+          } else if ($('#fuma').val() == '') {
+              alert("fuma is required");
+          } else if ($('#toma').val() == '') {
+              alert("toma is required");
+          } else if ($('#hipertenso').val() == '') {
+              alert("hipertenso is required");
+          } else if ($('#cirugias').val() == '') {
+              alert("cirugias is required");
+          } else if ($('#peso').val() == '') {
+              alert("peso is required");
+          }else if ($('#porcentajeDeGrasa').val() == '') {
+              alert("porcentajeDeGrasa is required");
+          }else if ($('#porcentajeDeAgua').val() == '') {
+              alert("porcentajeDeAgua is required");
+          }else if ($('#imc').val() == '') {
+              alert("imc is required");
+          }else if ($('#pecho').val() == '') {
+              alert("pecho is required");
+          }else if ($('#cintura').val() == '') {
+              alert("cintura is required");
+          }else if ($('#brazo').val() == '') {
+              alert("brazo is required");
+          }else if ($('#abdomen').val() == '') {
+              alert("abdomen is required");
+          }else if ($('#cadera').val() == '') {
+              alert("cadera is required");
+          }else if ($('#muslo').val() == '') {
+              alert("muslo is required");
+          }else if ($('#pantorrilla').val() == '') {
+              alert("pantorrilla is required");
           } else {
               $.ajax({
                   url: "insert.php",
