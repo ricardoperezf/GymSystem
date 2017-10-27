@@ -212,8 +212,171 @@ require_once '../../php/conexion.php';
                     <div class="card-header">
                         <i class="fa fa-table"></i> Información de clientes
                         <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#add_data_Modal">
-                            <span class="glyphiconAgregar glyphicon-plus" aria-hidden="true"></span>
+                        <span class="glyphiconAgregar glyphicon-plus" aria-hidden="true"></span>
                         </button>
+                    </div>
+                    <!-- Modal -->
+                    <div id="add_data_Modal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Agregar clientes</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" id="insert_form">
+                                        <h5>Información personal</h5>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Nombre del cliente</label>
+                                                    <input type="text" name="nombreDelCliente" id="nombreDelCliente" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Cédula</label>
+                                                    <input type="text" name="cedula" id="cedula" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Direccion</label>
+                                                    <input type="text" name="direccion" id="direccion" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Teléfono</label>
+                                                    <input type="text" name="telefono" id="telefono" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Oficio</label>
+                                                    <input type="text" name="oficio" id="oficio" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Estatura</label>
+                                                    <input type="text" name="estatura" id="estatura" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Edad</label>
+                                                    <input type="number" name="edad" id="edad" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Fecha de Nacimiento</label>
+                                                    <input type="date" name="FechaDeNacimiento" id="FechaDeNacimiento" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Objetivos</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                                                        <textarea name="objetivos" id="objetivos" class="form-control" required></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Hábitos alimenticios</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                                                        <textarea name="habitosAlimenticios" id="habitosAlimenticios" class="form-control" required></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                 <div class="form-group">
+                                                    <label>Enfermedades y lesiones</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                                                        <textarea name="enfermedadesYLesiones" id="enfermedadesYLesiones" class="form-control" required></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>¿Fuma?</label>
+                                                    <input type="text" name="fuma" id="fuma" class="form-control" />
+                                                </div>
+                                            </div>
+                                             <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>¿Toma?</label>
+                                                    <input type="text" name="toma" id="toma" class="form-control" />
+                                                </div>
+                                            </div>
+                                             <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>¿Hipertenso?</label>
+                                                    <input type="text" name="hipertenso" id="hipertenso" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Cirugías último año</label>
+                                                    <input type="text" name="cirugias" id="cirugias" class="form-control" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Peso</label>
+                                                    <input type="text" name="peso" id="peso" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Porcentaje de grasa</label>
+                                                    <input type="text" name="porcentajeDeGrasa" id="porcentajeDeGrasa" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                  <div class="form-group">
+                                                    <label>Porcentaje de agua</label>
+                                                    <input type="text" name="porcentajeDeAgua" id="porcentajeDeAgua" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                            </div>
+                                        </div>
+                                        <br />
+
+                                        <input type="hidden" name="employee_id" id="employee_id" />
+                                        <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -590,54 +753,6 @@ require_once '../../php/conexion.php';
                                         <td>37</td>
                                         <td>2009/08/19</td>
                                         <td>$139,575</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Thor Walton</td>
-                                        <td>Developer</td>
-                                        <td>New York</td>
-                                        <td>61</td>
-                                        <td>2013/08/11</td>
-                                        <td>$98,540</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Finn Camacho</td>
-                                        <td>Support Engineer</td>
-                                        <td>San Francisco</td>
-                                        <td>47</td>
-                                        <td>2009/07/07</td>
-                                        <td>$87,500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Serge Baldwin</td>
-                                        <td>Data Coordinator</td>
-                                        <td>Singapore</td>
-                                        <td>64</td>
-                                        <td>2012/04/09</td>
-                                        <td>$138,575</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Zenaida Frank</td>
-                                        <td>Software Engineer</td>
-                                        <td>New York</td>
-                                        <td>63</td>
-                                        <td>2010/01/04</td>
-                                        <td>$125,250</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Zorita Serrano</td>
-                                        <td>Software Engineer</td>
-                                        <td>San Francisco</td>
-                                        <td>56</td>
-                                        <td>2012/06/01</td>
-                                        <td>$115,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jennifer Acosta</td>
-                                        <td>Junior Javascript Developer</td>
-                                        <td>Edinburgh</td>
-                                        <td>43</td>
-                                        <td>2013/02/01</td>
-                                        <td>$75,650</td>
                                     </tr>
                                     <tr>
                                         <td>Cara Stevens</td>

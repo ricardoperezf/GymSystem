@@ -4855,7 +4855,8 @@ button.close {
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: .3rem;
-    outline: 0
+    outline: 0;
+    width: 800px
 }
 
 .modal-backdrop {
