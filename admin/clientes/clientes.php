@@ -278,7 +278,7 @@ require_once '../../php/conexion.php';
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Fecha de Nacimiento</label>
-                                                    <input type="date" name="FechaDeNacimiento" id="FechaDeNacimiento" class="form-control" />
+                                                    <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>

@@ -8,6 +8,8 @@
       $cedula = mysqli_real_escape_string($connect, $_POST["cedula"]);
       $direccion = mysqli_real_escape_string($connect, $_POST["direccion"]);
       $telefono = mysqli_real_escape_string($connect, $_POST["telefono"]);
+      $usuario = $nombreDelCliente;
+      $contrasena = $nombreDelCliente;
       $oficio = mysqli_real_escape_string($connect, $_POST["oficio"]);
       $estatura = mysqli_real_escape_string($connect, $_POST["estatura"]);
       $edad = mysqli_real_escape_string($connect, $_POST["edad"]);
@@ -19,6 +21,9 @@
       $toma = mysqli_real_escape_string($connect, $_POST["toma"]);
       $hipertenso = mysqli_real_escape_string($connect, $_POST["hipertenso"]);
       $cirugias = mysqli_real_escape_string($connect, $_POST["cirugias"]);
+      $peso = mysqli_real_escape_string($connect, $_POST["peso"]);
+      $porcentajeDeGrasa = mysqli_real_escape_string($connect, $_POST["porcentajeDeGrasa"]);
+      $porcentajeDeAgua = mysqli_real_escape_string($connect, $_POST["porcentajeDeAgua"]);
       $imc = mysqli_real_escape_string($connect, $_POST["imc"]);
       $pecho = mysqli_real_escape_string($connect, $_POST["pecho"]);
       $espalda = mysqli_real_escape_string($connect, $_POST["espalda"]);
@@ -43,8 +48,7 @@
       else
       {
            $query = "
-           INSERT INTO cursos(nombre_curso, id_profesor, id_estudiante, tipo_equipo)
-           VALUES('$nombreDelCurso', '$tipoDeProfesor', '$tipoDeEstudiante', '$tipoDeEquipo');
+           INSERT INTO cliente(nombre, cedula, direccion, telefono, usuario, contrasena, oficio, estatura, edad, fechadenacimiento, objetivos, habito_alimenticio, enfermedades_lesiones, fuma, toma, hipertenso, cirugias_ultimo_ano, peso, porcentaje_grasa, porcentaje_agua, imc, pecho, espalda, brazo, cintura, abdomen, cadera, muslo, pantorrilla) VALUES ('$nombreDelCliente', '$cedula', '$direccion', '$telefono', '$usuario', '$contrasena', '$oficio', '$estatura', '$edad', '$fechaDeNacimiento', '$objetivos', '$habitosAlimenticios', '$enfermedadesYLesiones', '$fuma', '$toma', '$hipertenso', '$cirugias', '$peso', '$porcentajeDeGrasa', '$porcentajeDeAgua', '$imc', '$pecho', '$espalda', '$brazo', '$cintura', '$abdomen', '$cadera', '$muslo', '$pantorrilla');
            ";
            $message = 'Data Inserted';
       }
