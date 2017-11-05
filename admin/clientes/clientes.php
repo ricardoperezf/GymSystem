@@ -1,17 +1,4 @@
-<?php
-    session_start();
 
-    if(isset($_SESSION['usuario'])){
-        if($_SESSION['usuario']['usuario'] == 'admin'){
-        }
-    } else {
-        header('Location: ../../index.php');
-    }
-
-require_once '../../php/conexion.php';
- $query = "SELECT * FROM cliente";
- $result = mysqli_query($mysqli, $query);
-?>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -567,6 +554,7 @@ require_once '../../php/conexion.php';
             <script src="../../js/sb-admin.min.js"></script>
             <!-- Custom scripts for this page-->
             <script src="../../js/sb-admin-datatables.min.js"></script>
+            <script src="controlador.js"></script>
         </div>
     </body>
 

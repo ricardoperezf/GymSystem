@@ -91,43 +91,7 @@ require_once '../php/conexion.php';
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                            <i class="fa fa-fw fa-sitemap"></i>
-                            <span class="nav-link-text">Menu Levels</span>
-                        </a>
-                        <ul class="sidenav-second-level collapse" id="collapseMulti">
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-                                <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-fw fa-link"></i>
-                            <span class="nav-link-text">Link</span>
-                        </a>
-                    </li>
+
                 </ul>
                 <ul class="navbar-nav sidenav-toggler">
                     <li class="nav-item">
@@ -250,7 +214,7 @@ require_once '../php/conexion.php';
                                 <div class="card-body-icon">
                                     <i class="fa fa-fw fa-comments"></i>
                                 </div>
-                                <div class="mr-5">Clientes</div>
+                                <div class="mr-5">12 Clientes</div>
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="clientes/clientes.php">
                                 <span class="float-left">View Details</span>
@@ -266,7 +230,7 @@ require_once '../php/conexion.php';
                                 <div class="card-body-icon">
                                     <i class="fa fa-fw fa-list"></i>
                                 </div>
-                                <div class="mr-5">11 New Tasks!</div>
+                                <div class="mr-5">11 Pagos</div>
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="#">
                                 <span class="float-left">View Details</span>
@@ -282,7 +246,7 @@ require_once '../php/conexion.php';
                                 <div class="card-body-icon">
                                     <i class="fa fa-fw fa-shopping-cart"></i>
                                 </div>
-                                <div class="mr-5">123 New Orders!</div>
+                                <div class="mr-5">10 Rutinas</div>
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="#">
                                 <span class="float-left">View Details</span>
@@ -298,7 +262,7 @@ require_once '../php/conexion.php';
                                 <div class="card-body-icon">
                                     <i class="fa fa-fw fa-support"></i>
                                 </div>
-                                <div class="mr-5">13 New Tickets!</div>
+                                <div class="mr-5">20 Ejercicios</div>
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="#">
                                 <span class="float-left">View Details</span>
