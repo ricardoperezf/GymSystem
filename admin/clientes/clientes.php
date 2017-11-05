@@ -1,4 +1,17 @@
+<?php
+    session_start();
 
+    if(isset($_SESSION['usuario'])){
+        if($_SESSION['usuario']['usuario'] == 'admin'){
+        }
+    } else {
+        header('Location: ../../index.php');
+    }
+
+require_once '../../php/conexion.php';
+ $query = "SELECT * FROM cliente";
+ $result = mysqli_query($mysqli, $query);
+?>
     <!DOCTYPE html>
     <html lang="en">
 
