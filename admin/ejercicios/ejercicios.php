@@ -193,12 +193,12 @@ require_once '../../php/conexion.php';
                     <li class="breadcrumb-item">
                         <a href="#">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item active">Clientes</li>
+                    <li class="breadcrumb-item active">Ejercicios</li>
                 </ol>
                 <!-- Example DataTables Card-->
                 <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fa fa-table"></i> Información de clientes
+                        <i class="fa fa-table"></i> Información de ejercicios
                         <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#add_data_Modal">
                         <span class="glyphiconAgregar glyphicon-plus" aria-hidden="true"></span>
                         </button>
@@ -209,7 +209,9 @@ require_once '../../php/conexion.php';
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Agregar clientes</h4>
+                                    <h4 class="modal-title">Agregar
+                                        <ejercicio></ejercicio>
+                                    </h4>
                                 </div>
                                 <div class="modal-body">
                                     <form method="post" id="insert_form">
@@ -438,25 +440,19 @@ require_once '../../php/conexion.php';
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Cédula</th>
-                                        <th>Dirección</th>
-                                        <th>Teléfono</th>
-                                        <th>Edad</th>
-                                        <th>Oficio</th>
-                                        <th>Estatura</th>
+                                        <th>Nombre del ejercicio</th>
+                                        <th>Descanso en minutos</th>
+                                        <th>Número de series</th>
+                                        <th>Repeticiones</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Cédula</th>
-                                        <th>Dirección</th>
-                                        <th>Teléfono</th>
-                                        <th>Edad</th>
-                                        <th>Oficio</th>
-                                        <th>Estatura</th>
+                                        <th>Nombre del ejercicio</th>
+                                        <th>Descanso en minutos</th>
+                                        <th>Número de series</th>
+                                        <th>Repeticiones</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </tfoot>
@@ -471,22 +467,13 @@ require_once '../../php/conexion.php';
                                                 <?php echo $row["nombre"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["cedula"]; ?>
+                                                <?php echo $row["descanso"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["direccion"]; ?>
+                                                <?php echo $row["numero_series"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["telefono"]; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["edad"]; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["oficio"]; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["estatura"]; ?>
+                                                <?php echo $row["numero_repeticiones"]; ?>
                                             </td>
                                             <td>
                                                 <div class="btn-group" role="group" style="width:270px">
