@@ -39,7 +39,7 @@
                   method: "POST",
                   data: $('#insert_form').serialize(),
                   beforeSend: function () {
-                      $('#insert').val("Ingresando");
+                      $('#insert').val("Agregando");
                   },
                   success: function (data) {
                       $('#insert_form')[0].reset();
