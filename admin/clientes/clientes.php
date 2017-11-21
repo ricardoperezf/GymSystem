@@ -475,48 +475,48 @@ require_once '../../php/conexion.php';
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                                    <?php
+                                    <?php
 
                                             while($row = mysqli_fetch_array($result))
                                            {
                                            ?>
-                                                    <tr>
-                                                        <td>
-                                                            <?php echo $row["nombre"]; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $row["cedula"]; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $row["direccion"]; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $row["telefono"]; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $row["edad"]; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $row["oficio"]; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $row["estatura"]; ?>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group" role="group" style="width:270px">
+                                        <tr>
+                                            <td>
+                                                <?php echo $row["nombre"]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["cedula"]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["direccion"]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["telefono"]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["edad"]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["oficio"]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["estatura"]; ?>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" style="width:270px">
 
-                                                                <button name="edit" id="<?php echo $row['id']; ?>" class="btn btn-primary view_data"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Ver</button>
+                                                    <button name="edit" id="<?php echo $row['id']; ?>" class="btn btn-primary view_data"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Ver</button>
 
-                                                                <button name="view" id="<?php echo $row['id']; ?>" class="btn btn-warning edit_data"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Editar</button>
+                                                    <button name="view" id="<?php echo $row['id']; ?>" class="btn btn-warning edit_data"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Editar</button>
 
-                                                                <button name="delete" id="<?php echo $row['id']; ?>" class="btn btn-primary delete_class delete_class"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Eliminar</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <?php
+                                                    <button name="delete" id="<?php echo $row['id']; ?>" class="btn btn-primary delete_class delete_class"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Eliminar</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <?php
                                                }
                                                ?>
-                                                </tbody>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -568,6 +568,25 @@ require_once '../../php/conexion.php';
             <!-- Custom scripts for this page-->
             <script src="../../js/sb-admin-datatables.min.js"></script>
             <script src="controlador.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $(".delete_class").click(function() {
+                        var del_id = $(this).attr('id');
+                        $.ajax({
+                            type: 'POST',
+                            url: 'delete.php',
+                            data: 'delete_id=' + del_id,
+                            success: function(data) {
+                                location.reload(true);
+                            },
+                            error: function() {
+                                alert('Error');
+                            }
+                        });
+                    });
+                });
+
+            </script>
         </div>
     </body>
 
