@@ -57,25 +57,25 @@
               alert("cirugias is required");
           } else if ($('#peso').val() == '') {
               alert("peso is required");
-          }else if ($('#porcentajeDeGrasa').val() == '') {
+          } else if ($('#porcentajeDeGrasa').val() == '') {
               alert("porcentajeDeGrasa is required");
-          }else if ($('#porcentajeDeAgua').val() == '') {
+          } else if ($('#porcentajeDeAgua').val() == '') {
               alert("porcentajeDeAgua is required");
-          }else if ($('#imc').val() == '') {
+          } else if ($('#imc').val() == '') {
               alert("imc is required");
-          }else if ($('#pecho').val() == '') {
+          } else if ($('#pecho').val() == '') {
               alert("pecho is required");
-          }else if ($('#cintura').val() == '') {
+          } else if ($('#cintura').val() == '') {
               alert("cintura is required");
-          }else if ($('#brazo').val() == '') {
+          } else if ($('#brazo').val() == '') {
               alert("brazo is required");
-          }else if ($('#abdomen').val() == '') {
+          } else if ($('#abdomen').val() == '') {
               alert("abdomen is required");
-          }else if ($('#cadera').val() == '') {
+          } else if ($('#cadera').val() == '') {
               alert("cadera is required");
-          }else if ($('#muslo').val() == '') {
+          } else if ($('#muslo').val() == '') {
               alert("muslo is required");
-          }else if ($('#pantorrilla').val() == '') {
+          } else if ($('#pantorrilla').val() == '') {
               alert("pantorrilla is required");
           } else {
               $.ajax({
@@ -91,6 +91,9 @@
                       $('#employee_table').html(data);
                       location.reload(true);
 
+                  },
+                  error: function (jqXHR, exception) {
+                      error(jqXHR, exception, "INSERTAR");
                   }
               });
           }
