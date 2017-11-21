@@ -209,204 +209,37 @@ require_once '../../php/conexion.php';
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Agregar
+                                    <h4 class="modal-title">Agregar ejercicio
                                         <ejercicio></ejercicio>
                                     </h4>
                                 </div>
                                 <div class="modal-body">
                                     <form method="post" id="insert_form">
-                                        <h5>Información personal</h5>
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Nombre del cliente</label>
-                                                    <input type="text" name="nombreDelCliente" id="nombreDelCliente" class="form-control" />
+                                                    <label>Nombre del ejercicio</label>
+                                                    <input type="text" name="nombre" id="nombre" class="form-control" />
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Cédula</label>
-                                                    <input type="text" name="cedula" id="cedula" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Direccion</label>
-                                                    <input type="text" name="direccion" id="direccion" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Teléfono</label>
-                                                    <input type="text" name="telefono" id="telefono" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Oficio</label>
-                                                    <input type="text" name="oficio" id="oficio" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Estatura</label>
-                                                    <input type="text" name="estatura" id="estatura" class="form-control" />
+                                                    <label>Descanso en minutos</label>
+                                                    <input type="number" name="descanso" id="descanso" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Edad</label>
-                                                    <input type="number" name="edad" id="edad" class="form-control" />
+                                                    <label>Número de series</label>
+                                                    <input type="number" name="numero_series" id="numero_series" class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Fecha de Nacimiento</label>
-                                                    <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Objetivos</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                                        <textarea name="objetivos" id="objetivos" class="form-control" required></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Hábitos alimenticios</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                                        <textarea name="habitosAlimenticios" id="habitosAlimenticios" class="form-control" required></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Enfermedades y lesiones</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                                        <textarea name="enfermedadesYLesiones" id="enfermedadesYLesiones" class="form-control" required></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>¿Fuma?</label>
-                                                    <input type="text" name="fuma" id="fuma" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>¿Toma?</label>
-                                                    <input type="text" name="toma" id="toma" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>¿Hipertenso?</label>
-                                                    <input type="text" name="hipertenso" id="hipertenso" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Cirugías último año</label>
-                                                    <input type="text" name="cirugias" id="cirugias" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h5>Datos antropométricos</h5>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Peso</label>
-                                                    <input type="text" name="peso" id="peso" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Porcentaje de grasa</label>
-                                                    <input type="text" name="porcentajeDeGrasa" id="porcentajeDeGrasa" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Porcentaje de agua</label>
-                                                    <input type="text" name="porcentajeDeAgua" id="porcentajeDeAgua" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>IMC</label>
-                                                    <input type="text" name="imc" id="imc" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h5>Medidad corporales</h5>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Pecho</label>
-                                                    <input type="text" name="pecho" id="pecho" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Espalda</label>
-                                                    <input type="text" name="espalda" id="espalda" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Brazo</label>
-                                                    <input type="text" name="brazo" id="brazo" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Cintura</label>
-                                                    <input type="text" name="cintura" id="cintura" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Abdomen</label>
-                                                    <input type="text" name="abdomen" id="abdomen" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Cadera</label>
-                                                    <input type="text" name="cadera" id="cadera" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Muslo</label>
-                                                    <input type="text" name="muslo" id="muslo" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Pantorrilla</label>
-                                                    <input type="text" name="pantorrilla" id="pantorrilla" class="form-control" />
+                                                    <label>Número de repeticiones</label>
+                                                    <input type="number" name="numero_repeticiones" id="numero_repeticiones" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
