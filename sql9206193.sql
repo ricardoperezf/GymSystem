@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: sql9.freemysqlhosting.net
--- Tiempo de generación: 21-11-2017 a las 02:43:26
+-- Tiempo de generación: 21-11-2017 a las 16:07:37
 -- Versión del servidor: 5.5.50-0ubuntu0.14.04.1
 -- Versión de PHP: 7.0.22-0ubuntu0.16.04.1
 
@@ -89,6 +89,28 @@ INSERT INTO `cliente` (`id`, `nombre`, `cedula`, `direccion`, `telefono`, `usuar
 (4, 'Joselui Meneses ', 'Comer', 'Pavas', '18181818', 'Joselui Meneses ', 'Joselui Meneses ', 'Student', '1,50', '22', '1111-12-12', 'Comer', 'Comer', 'No', 'No', 'No', 'No', 'No', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80'),
 (10, 'nombre', 'cedula', 'direccion', '123', 'nombre', 'nombre', 'oficio', 'estatura', '19', '1998-02-25', 'objetivo', 'habito', 'enf', 'fuma', 'toma', 'hiper', 'cir', 'peso', '%grasa', '%agua', 'imc', 'pecho', 'espal', 'braz', 'cintur', 'abdom', 'cader', 'muslo', 'pantoriila');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ejercicio`
+--
+
+CREATE TABLE `ejercicio` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `descanso` varchar(20) NOT NULL,
+  `numero_series` varchar(20) NOT NULL,
+  `numero_repeticiones` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ejercicio`
+--
+
+INSERT INTO `ejercicio` (`id`, `nombre`, `descanso`, `numero_series`, `numero_repeticiones`) VALUES
+(1, 'Push Up', '1', '3', '12'),
+(2, 'Barbell Curl', '1', '4', '10');
+
 --
 -- Índices para tablas volcadas
 --
@@ -106,6 +128,12 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `ejercicio`
+--
+ALTER TABLE `ejercicio`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -113,7 +141,12 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;COMMIT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT de la tabla `ejercicio`
+--
+ALTER TABLE `ejercicio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
