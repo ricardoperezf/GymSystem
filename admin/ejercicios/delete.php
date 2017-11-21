@@ -3,7 +3,7 @@
 $connect = mysqli_connect("sql9.freemysqlhosting.net", "sql9206193", "yDz3nenNM4", "sql9206193");
 
     $id = $_POST['delete_id'];
-    $query = "delete from cliente where id = $id";
+    $query = "delete from ejercicio where id = $id";
       $output = '';
 
     if(mysqli_query($connect, $query)){
