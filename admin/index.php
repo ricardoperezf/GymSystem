@@ -71,25 +71,11 @@ require_once '../php/conexion.php';
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                        <a class="nav-link" href="ejercicios/ejercicios.php">
                             <i class="fa fa-fw fa-file"></i>
                             <span class="nav-link-text">Ejercicios</span>
                         </a>
-                        <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-                            <li>
-                                <a href="#">Login Page</a>
-                            </li>
-                            <li>
-                                <a href="#">Registration Page</a>
-                            </li>
-                            <li>
-                                <a href="#">Forgot Password Page</a>
-                            </li>
-                            <li>
-                                <a href="#">Blank Page</a>
-                            </li>
-                        </ul>
                     </li>
 
                 </ul>
