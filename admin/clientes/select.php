@@ -49,89 +49,76 @@
                 </tr>
                  <tr>
                      <td width="30%"><label>Objetivos</label></td>
-                     <td width="70%">'.$row["objetivos, "].'</td>
+                     <td width="70%">'.$row["objetivos"].'</td>
                 </tr>
                                  <tr>
                      <td width="30%"><label>Hábitos alimenticios</label></td>
-                     <td width="70%">'.$row["habito_alimenticio, "].'</td>
+                     <td width="70%">'.$row["habito_alimenticio"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Fuma</label></td>
+                     <td width="70%">'.$row["fuma"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Toma</label></td>
+                     <td width="70%">'.$row["toma"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Hipertenso</label></td>
+                     <td width="70%">'.$row["hipertenso"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Cirugías en el último año</label></td>
+                     <td width="70%">'.$row["cirugias_ultimo_ano"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Peso</label></td>
+                     <td width="70%">'.$row["peso"].'</td>
+                </tr>
+                <tr>
+                     <td width="30%"><label>Porcentaje de grasa</label></td>
+                     <td width="70%">'.$row["porcentaje_grasa"].'</td>
+                </tr>
+                <tr>
+                     <td width="30%"><label>Porcentaje de agua</label></td>
+                     <td width="70%">'.$row["porcentaje_agua"].'</td>
+                </tr>
+                <tr>
+                     <td width="30%"><label>IMC</label></td>
+                     <td width="70%">'.$row["imc"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Pecho</label></td>
+                     <td width="70%">'.$row["pecho"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Espalda</label></td>
+                     <td width="70%">'.$row["espalda"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Brazo</label></td>
+                     <td width="70%">'.$row["brazo"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Cintura</label></td>
+                     <td width="70%">'.$row["cintura"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Abdomen</label></td>
+                     <td width="70%">'.$row["abdomen"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Cadera</label></td>
+                     <td width="70%">'.$row["cadera"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Muslo</label></td>
+                     <td width="70%">'.$row["muslo"].'</td>
                 </tr>
                                  <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
+                     <td width="30%"><label>Pantorrila</label></td>
+                     <td width="70%">'.$row["pantorrilla"].'</td>
                 </tr>
-                                 <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
-                </tr>
-                                 <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
-                </tr>
-                                 <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
-                </tr>
-                                 <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
-                </tr>
-                                 <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
-                </tr>
-                                 <tr>
-                     <td width="30%"><label>Fecha de nacimiento</label></td>
-                     <td width="70%">'.$row["fechadenacimiento"].'</td>
-                </tr>
-
            ';
       }
       $output .= '
