@@ -13,10 +13,35 @@
               },
               dataType: "json",
               success: function (data) {
-                  $('#nombreDelCurso').val(data.nombre);
-                  $('#tipoDeProfesor').val(data.profid);
-                  $('#tipoDeEstudiante').val(data.estid);
-                  $('#tipoDeEquipo').val(data.tipo_equipo);
+                  $('#nombreDelCliente').val(data.nombre);
+                  $('#cedula').val(data.cedula);
+                  $('#direccion').val(data.direccion);
+                  $('#telefono').val(data.telefono);
+                  $('#oficio').val(data.oficio);
+                  $('#estatura').val(data.estatura);
+                  $('#edad').val(data.edad);
+                  $('#fechaDeNacimiento').val(data.fechadenacimiento);
+                  $('#objetivos').val(data.objetivos);
+                  $('#habitosAlimenticios').val(data.habito_alimenticio);
+                  $('#enfermedadesYLesiones').val(data.enfermedades_lesiones);
+                  $('#fuma').val(data.fuma);
+                  $('#toma').val(data.toma);
+                  $('#hipertenso').val(data.hipertenso);
+                  $('#cirugias').val(data.cirugias_ultimo_ano);
+                  $('#peso').val(data.peso);
+                  $('#porcentajeDeGrasa').val(data.porcentaje_grasa);
+                  $('#porcentajeDeAgua').val(data.porcentaje_agua);
+                  $('#imc').val(data.imc);
+                  $('#pecho').val(data.pecho);
+                  $('#espalda').val(data.espalda);
+                  $('#brazo').val(data.brazo);
+                  $('#cintura').val(data.cintura);
+                  $('#abdomen').val(data.abdomen);
+                  $('#cadera').val(data.cadera);
+                  $('#muslo').val(data.muslo);
+                  $('#pantorrilla').val(data.pantorrilla);
+
+
                   $('#employee_id').val(data.id);
                   $('#insert').val("Update");
                   $('#add_data_Modal').modal('show');
@@ -39,7 +64,7 @@
               alert("estatura is required");
           } else if ($('#edad').val() == '') {
               alert("edad is required");
-          } else if ($('#FechaDeNacimiento').val() == '') {
+          } else if ($('#fechaDeNacimientos').val() == '') {
               alert("FechaDeNacimiento is required");
           } else if ($('#objetivos').val() == '') {
               alert("objetivos is required");
