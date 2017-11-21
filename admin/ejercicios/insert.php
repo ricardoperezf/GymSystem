@@ -4,74 +4,26 @@
  {
       $output = '';
       $message = '';
-      $nombreDelCliente = mysqli_real_escape_string($connect, $_POST["nombreDelCliente"]);
-      $cedula = mysqli_real_escape_string($connect, $_POST["cedula"]);
-      $direccion = mysqli_real_escape_string($connect, $_POST["direccion"]);
-      $telefono = mysqli_real_escape_string($connect, $_POST["telefono"]);
-      $usuario = $nombreDelCliente;
-      $contrasena = $nombreDelCliente;
-      $oficio = mysqli_real_escape_string($connect, $_POST["oficio"]);
-      $estatura = mysqli_real_escape_string($connect, $_POST["estatura"]);
-      $edad = mysqli_real_escape_string($connect, $_POST["edad"]);
-      $fechaDeNacimiento = mysqli_real_escape_string($connect, $_POST["fechaDeNacimiento"]);
-      $objetivos = mysqli_real_escape_string($connect, $_POST["objetivos"]);
-      $habitosAlimenticios = mysqli_real_escape_string($connect, $_POST["habitosAlimenticios"]);
-      $enfermedadesYLesiones = mysqli_real_escape_string($connect, $_POST["enfermedadesYLesiones"]);
-      $fuma = mysqli_real_escape_string($connect, $_POST["fuma"]);
-      $toma = mysqli_real_escape_string($connect, $_POST["toma"]);
-      $hipertenso = mysqli_real_escape_string($connect, $_POST["hipertenso"]);
-      $cirugias = mysqli_real_escape_string($connect, $_POST["cirugias"]);
-      $peso = mysqli_real_escape_string($connect, $_POST["peso"]);
-      $porcentajeDeGrasa = mysqli_real_escape_string($connect, $_POST["porcentajeDeGrasa"]);
-      $porcentajeDeAgua = mysqli_real_escape_string($connect, $_POST["porcentajeDeAgua"]);
-      $imc = mysqli_real_escape_string($connect, $_POST["imc"]);
-      $pecho = mysqli_real_escape_string($connect, $_POST["pecho"]);
-      $espalda = mysqli_real_escape_string($connect, $_POST["espalda"]);
-      $brazo = mysqli_real_escape_string($connect, $_POST["brazo"]);
-      $cintura = mysqli_real_escape_string($connect, $_POST["cintura"]);
-      $abdomen = mysqli_real_escape_string($connect, $_POST["abdomen"]);
-      $cadera = mysqli_real_escape_string($connect, $_POST["cadera"]);
-      $muslo = mysqli_real_escape_string($connect, $_POST["muslo"]);
-      $pantorrilla = mysqli_real_escape_string($connect, $_POST["pantorrilla"]);
+      $nombre = mysqli_real_escape_string($connect, $_POST["nombre"]);
+      $descanso = mysqli_real_escape_string($connect, $_POST["descanso"]);
+      $numero_series = mysqli_real_escape_string($connect, $_POST["numero_series"]);
+      $numero_repeticiones = mysqli_real_escape_string($connect, $_POST["numero_repeticiones"]);
 
      if($_POST["employee_id"] != '')
       {
            $query = "
-           UPDATE cliente
-           SET nombre ='$nombreDelCliente',
-           cedula ='$cedula',
-           direccion ='$direccion',
-           telefono = '$telefono',
-           oficio = '$oficio',
-           estatura = '$estatura',
-           edad = '$edad',
-           fechadenacimiento = '$fechaDeNacimiento',
-           objetivos = '$objetivos',
-           habito_alimenticio = '$habitosAlimenticios',
-           enfermedades_lesiones = '$enfermedadesYLesiones',
-           fuma = '$fuma',
-           toma = '$toma',
-           hipertenso = '$hipertenso',
-           cirugias_ultimo_ano = '$cirugias',
-           peso = '$peso',
-           porcentaje_grasa = '$porcentajeDeGrasa',
-           porcentaje_agua = '$porcentajeDeAgua',
-           imc = '$imc',
-           pecho = '$pecho',
-           espalda = '$espalda',
-           brazo = '$brazo',
-           cintura = '$cintura',
-           abdomen = '$abdomen',
-           cadera = '$cadera',
-           muslo = '$muslo',
-           pantorrilla = '$pantorrilla'
+           UPDATE ejercicio
+           SET nombre ='$nombre',
+           descanso ='$descanso',
+           numero_series ='$numero_series',
+           numero_repeticiones = '$numero_repeticiones',
            WHERE id='".$_POST["employee_id"]."'";
            $message = 'Data Updated';
       }
       else
       {
            $query = "
-           INSERT INTO cliente(nombre, cedula, direccion, telefono, usuario, contrasena, oficio, estatura, edad, fechadenacimiento, objetivos, habito_alimenticio, enfermedades_lesiones, fuma, toma, hipertenso, cirugias_ultimo_ano, peso, porcentaje_grasa, porcentaje_agua, imc, pecho, espalda, brazo, cintura, abdomen, cadera, muslo, pantorrilla) VALUES ('$nombreDelCliente', '$cedula', '$direccion', '$telefono', '$usuario', '$contrasena', '$oficio', '$estatura', '$edad', '$fechaDeNacimiento', '$objetivos', '$habitosAlimenticios', '$enfermedadesYLesiones', '$fuma', '$toma', '$hipertenso', '$cirugias', '$peso', '$porcentajeDeGrasa', '$porcentajeDeAgua', '$imc', '$pecho', '$espalda', '$brazo', '$cintura', '$abdomen', '$cadera', '$muslo', '$pantorrilla');
+           INSERT INTO ejercicio(nombre, descanso, numero_series, numero_repeticiones) VALUES ('$nombre', '$descanso', '$numero_series', '$numero_repeticiones');
            ";
            $message = 'Data Inserted';
       }
@@ -87,13 +39,10 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Cédula</th>
-                            <th>Dirección</th>
-                            <th>Teléfono</th>
-                            <th>Edad</th>
-                            <th>Oficio</th>
-                            <th>Estatura</th>
+                            <th>Nombre del ejercicio</th>
+                            <th>Descanso en minutos</th>
+                            <th>Número de series</th>
+                            <th>Repeticiones</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -107,22 +56,13 @@
                                     ' . $row["nombre"] . '
                                 </td>
                                 <td>
-                                   ' . $row["cedula"] . '
+                                   ' . $row["descanso"] . '
                                 </td>
                                 <td>
-                                    ' . $row["direccion"] . '
+                                    ' . $row["numero_series"] . '
                                 </td>
                                 <td>
-                                    ' . $row["telefono"] . '
-                                </td>
-                                <td>
-                                    ' . $row["edad"] . '
-                                </td>
-                                <td>
-                                    ' . $row["oficio"] . '
-                                </td>
-                                <td>
-                                    ' . $row["estatura"] . '
+                                    ' . $row["numero_repeticiones"] . '
                                 </td>
                                 <td>
                                    <div class="btn-group" role="group" style="width:200px">
