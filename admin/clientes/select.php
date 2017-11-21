@@ -55,6 +55,10 @@
                      <td width="30%"><label>Hábitos alimenticios</label></td>
                      <td width="70%">'.$row["habito_alimenticio"].'</td>
                 </tr>
+                 <tr>
+                     <td width="30%"><label>Enfermedades y lesiones</label></td>
+                     <td width="70%">'.$row["enfermedades_lesiones"].'</td>
+                </tr>
                                  <tr>
                      <td width="30%"><label>Fuma</label></td>
                      <td width="70%">'.$row["fuma"].'</td>

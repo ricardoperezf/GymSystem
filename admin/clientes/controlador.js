@@ -40,10 +40,8 @@
                   $('#cadera').val(data.cadera);
                   $('#muslo').val(data.muslo);
                   $('#pantorrilla').val(data.pantorrilla);
-
-
                   $('#employee_id').val(data.id);
-                  $('#insert').val("Update");
+                  $('#insert').val("Editar");
                   $('#add_data_Modal').modal('show');
               }
           });

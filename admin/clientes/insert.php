@@ -37,11 +37,34 @@
      if($_POST["employee_id"] != '')
       {
            $query = "
-           UPDATE cursos
-           SET nombre_curso='$nombreDelCurso',
-           id_profesor='$tipoDeProfesor',
-           id_estudiante='$tipoDeEstudiante',
-           tipo_equipo = '$tipoDeEquipo'
+           UPDATE cliente
+           SET nombre ='$nombreDelCliente',
+           cedula ='$cedula',
+           direccion ='$direccion',
+           telefono = '$telefono',
+           oficio = '$oficio',
+           estatura = '$estatura',
+           edad = '$edad',
+           fechadenacimiento = '$fechaDeNacimiento',
+           objetivos = '$objetivos',
+           habito_alimenticio = '$habitosAlimenticios',
+           enfermedades_lesiones = '$enfermedadesYLesiones',
+           fuma = '$fuma',
+           toma = '$toma',
+           hipertenso = '$hipertenso',
+           cirugias_ultimo_ano = '$cirugias',
+           peso = '$peso',
+           porcentaje_grasa = '$porcentajeDeGrasa',
+           porcentaje_agua = '$porcentajeDeAgua',
+           imc = '$imc',
+           pecho = '$pecho',
+           espalda = '$espalda',
+           brazo = '$brazo',
+           cintura = '$cintura',
+           abdomen = '$abdomen',
+           cadera = '$cadera',
+           muslo = '$muslo',
+           pantorrilla = '$pantorrilla'
            WHERE id='".$_POST["employee_id"]."'";
            $message = 'Data Updated';
       }
