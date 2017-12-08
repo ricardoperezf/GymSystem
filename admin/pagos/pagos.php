@@ -273,25 +273,17 @@ $queryClientes = "SELECT * FROM cliente";
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Cédula</th>
-                                        <th>Dirección</th>
-                                        <th>Teléfono</th>
-                                        <th>Edad</th>
-                                        <th>Oficio</th>
-                                        <th>Estatura</th>
+                                        <th>Cliente</th>
+                                        <th>Fecha de pago</th>
+                                        <th>Fecha de vencimiento</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Cédula</th>
-                                        <th>Dirección</th>
-                                        <th>Teléfono</th>
-                                        <th>Edad</th>
-                                        <th>Oficio</th>
-                                        <th>Estatura</th>
+                                        <th>Cliente</th>
+                                        <th>Fecha de pago</th>
+                                        <th>Fecha de vencimiento</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </tfoot>
@@ -303,25 +295,13 @@ $queryClientes = "SELECT * FROM cliente";
                                            ?>
                                         <tr>
                                             <td>
-                                                <?php echo $row["nombre"]; ?>
+                                                <?php echo $row["cliente"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["cedula"]; ?>
+                                                <?php echo $row["fecha"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["direccion"]; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["telefono"]; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["edad"]; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["oficio"]; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["estatura"]; ?>
+                                                <?php echo $row["fecha_vencimiento"]; ?>
                                             </td>
                                             <td>
                                                 <div class="btn-group" role="group" style="width:270px">
