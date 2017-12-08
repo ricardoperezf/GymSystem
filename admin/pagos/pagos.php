@@ -9,7 +9,7 @@
     }
 
 require_once '../../php/conexion.php';
- $query = "SELECT * FROM cliente";
+ $query = "SELECT * FROM pagos";
  $result = mysqli_query($mysqli, $query);
 ?>
     <!DOCTYPE html>
@@ -56,7 +56,7 @@ require_once '../../php/conexion.php';
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                        <a class="nav-link" href="../tables.html">
+                        <a class="nav-link" href="../pagos/pagos.php">
                             <i class="fa fa-fw fa-table"></i>
                             <span class="nav-link-text">Pagos</span>
                         </a>
@@ -193,12 +193,12 @@ require_once '../../php/conexion.php';
                     <li class="breadcrumb-item">
                         <a href="#">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item active">Clientes</li>
+                    <li class="breadcrumb-item active">Pagos</li>
                 </ol>
                 <!-- Example DataTables Card-->
                 <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fa fa-table"></i> Información de clientes
+                        <i class="fa fa-table"></i> Información de los pagos
                         <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#add_data_Modal">
                         <span class="glyphiconAgregar glyphicon-plus" aria-hidden="true"></span>
                         </button>
@@ -209,33 +209,20 @@ require_once '../../php/conexion.php';
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Agregar clientes</h4>
+                                    <h4 class="modal-title">Agregar pagos</h4>
                                 </div>
                                 <div class="modal-body">
                                     <form method="post" id="insert_form">
-                                        <h5>Información personal</h5>
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>Nombre del cliente</label>
+                                                    <label>Cliente</label>
                                                     <input type="text" name="nombreDelCliente" id="nombreDelCliente" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Cédula</label>
-                                                    <input type="text" name="cedula" id="cedula" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Direccion</label>
-                                                    <input type="text" name="direccion" id="direccion" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Teléfono</label>
                                                     <input type="text" name="telefono" id="telefono" class="form-control" />
@@ -251,160 +238,6 @@ require_once '../../php/conexion.php';
                                                 <div class="form-group">
                                                     <label>Estatura</label>
                                                     <input type="text" name="estatura" id="estatura" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Edad</label>
-                                                    <input type="number" name="edad" id="edad" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Fecha de Nacimiento</label>
-                                                    <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Objetivos</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                                        <textarea name="objetivos" id="objetivos" class="form-control" required></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Hábitos alimenticios</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                                        <textarea name="habitosAlimenticios" id="habitosAlimenticios" class="form-control" required></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Enfermedades y lesiones</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                                        <textarea name="enfermedadesYLesiones" id="enfermedadesYLesiones" class="form-control" required></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>¿Fuma?</label>
-                                                    <input type="text" name="fuma" id="fuma" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>¿Toma?</label>
-                                                    <input type="text" name="toma" id="toma" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>¿Hipertenso?</label>
-                                                    <input type="text" name="hipertenso" id="hipertenso" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Cirugías último año</label>
-                                                    <input type="text" name="cirugias" id="cirugias" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h5>Datos antropométricos</h5>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Peso</label>
-                                                    <input type="text" name="peso" id="peso" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Porcentaje de grasa</label>
-                                                    <input type="text" name="porcentajeDeGrasa" id="porcentajeDeGrasa" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Porcentaje de agua</label>
-                                                    <input type="text" name="porcentajeDeAgua" id="porcentajeDeAgua" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>IMC</label>
-                                                    <input type="text" name="imc" id="imc" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h5>Medidad corporales</h5>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Pecho</label>
-                                                    <input type="text" name="pecho" id="pecho" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Espalda</label>
-                                                    <input type="text" name="espalda" id="espalda" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Brazo</label>
-                                                    <input type="text" name="brazo" id="brazo" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Cintura</label>
-                                                    <input type="text" name="cintura" id="cintura" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Abdomen</label>
-                                                    <input type="text" name="abdomen" id="abdomen" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Cadera</label>
-                                                    <input type="text" name="cadera" id="cadera" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Muslo</label>
-                                                    <input type="text" name="muslo" id="muslo" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Pantorrilla</label>
-                                                    <input type="text" name="pantorrilla" id="pantorrilla" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
