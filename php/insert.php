@@ -1,5 +1,5 @@
 <?php
- $connect = mysqli_connect("sql9.freemysqlhosting.net", "sql9200504", "DrJNGNuW6E", "sql9200504");
+ $connect = mysqli_connect("sql10.freemysqlhosting.net", "sql10209158", "Yt5kKkrRBk", "sql10209158");
  if(!empty($_POST))
  {
       $output = '';

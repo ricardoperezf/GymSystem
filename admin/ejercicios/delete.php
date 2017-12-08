@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect("sql9.freemysqlhosting.net", "sql9206193", "yDz3nenNM4", "sql9206193");
+$connect = mysqli_connect("sql10.freemysqlhosting.net", "sql10209158", "Yt5kKkrRBk", "sql10209158");
 
     $id = $_POST['delete_id'];
     $query = "delete from ejercicio where id = $id";

@@ -17,7 +17,8 @@
            descanso ='$descanso',
            numero_series ='$numero_series',
            numero_repeticiones = '$numero_repeticiones',
-           WHERE id='".$_POST["employee_id"]."'";
+           WHERE id='".$_POST["employee_id"]."'
+           ";
            $message = 'Data Updated';
       }
       else

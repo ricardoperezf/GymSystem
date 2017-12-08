@@ -2,9 +2,9 @@
 -- version 4.7.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: sql9.freemysqlhosting.net
--- Tiempo de generación: 21-11-2017 a las 16:07:37
--- Versión del servidor: 5.5.50-0ubuntu0.14.04.1
+-- Servidor: sql10.freemysqlhosting.net
+-- Tiempo de generación: 08-12-2017 a las 16:49:50
+-- Versión del servidor: 5.5.53-0ubuntu0.14.04.1
 -- Versión de PHP: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sql9206193`
+-- Base de datos: `sql10209158`
 --
 
 -- --------------------------------------------------------
@@ -111,6 +111,26 @@ INSERT INTO `ejercicio` (`id`, `nombre`, `descanso`, `numero_series`, `numero_re
 (1, 'Push Up', '1', '3', '12'),
 (2, 'Barbell Curl', '1', '4', '10');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pago`
+--
+
+CREATE TABLE `pago` (
+  `id` int(10) NOT NULL,
+  `fecha` date NOT NULL,
+  `fecha_vencimiento` date NOT NULL,
+  `cliente` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `pago`
+--
+
+INSERT INTO `pago` (`id`, `fecha`, `fecha_vencimiento`, `cliente`) VALUES
+(1, '2017-12-07', '2018-01-07', 1);
+
 --
 -- Índices para tablas volcadas
 --
@@ -134,6 +154,13 @@ ALTER TABLE `ejercicio`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `pago`
+--
+ALTER TABLE `pago`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `clienteid_pago_cliente` (`cliente`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -141,12 +168,27 @@ ALTER TABLE `ejercicio`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `ejercicio`
 --
 ALTER TABLE `ejercicio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `pago`
+--
+ALTER TABLE `pago`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `pago`
+--
+ALTER TABLE `pago`
+  ADD CONSTRAINT `clienteid_pago_cliente` FOREIGN KEY (`cliente`) REFERENCES `cliente` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
