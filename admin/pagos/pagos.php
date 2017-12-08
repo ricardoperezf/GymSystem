@@ -228,18 +228,6 @@ require_once '../../php/conexion.php';
                                                     <input type="text" name="telefono" id="telefono" class="form-control" />
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Oficio</label>
-                                                    <input type="text" name="oficio" id="oficio" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Estatura</label>
-                                                    <input type="text" name="estatura" id="estatura" class="form-control" />
-                                                </div>
-                                            </div>
                                         </div>
                                         <input type="hidden" name="employee_id" id="employee_id" />
                                         <input type="submit" name="insert" id="insert" value="Agregar" class="btn btn-success" />
