@@ -12,7 +12,7 @@ require_once '../../php/conexion.php';
  $query = "SELECT cliente.nombre, fecha, fecha_vencimiento FROM `pago` INNER JOIN cliente WHERE cliente.id = pago.cliente";
  $result = mysqli_query($mysqli, $query);
 
-$queryClientes = "SELECT cliente.nombre AS nombre * FROM cliente WHERE ";
+$queryClientes = "SELECT * FROM cliente";
  $resultClientes = mysqli_query($mysqli, $queryClientes);
 
 ?>
