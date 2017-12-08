@@ -9,10 +9,10 @@
     }
 
 require_once '../../php/conexion.php';
- $query = "SELECT * FROM pago";
+ $query = "SELECT cliente.nombre, fecha, fecha_vencimiento FROM `pago` INNER JOIN cliente WHERE cliente.id = pago.cliente";
  $result = mysqli_query($mysqli, $query);
 
-$queryClientes = "SELECT * FROM cliente";
+$queryClientes = "SELECT cliente.nombre AS nombre * FROM cliente WHERE ";
  $resultClientes = mysqli_query($mysqli, $queryClientes);
 
 ?>
@@ -232,17 +232,12 @@ $queryClientes = "SELECT * FROM cliente";
                                                             }
                                                         ?>
                                                     </select>
+                                                    <label>Fecha de pago</label>
+                                                    <input type="date" name="fechaDePago" id="fechaDePago" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Teléfono</label>
-                                                    <input type="text" name="telefono" id="telefono" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <input type="hidden" name="employee_id" id="employee_id" />
                                         <input type="submit" name="insert" id="insert" value="Agregar" class="btn btn-success" />
                                     </form>
@@ -295,7 +290,7 @@ $queryClientes = "SELECT * FROM cliente";
                                            ?>
                                         <tr>
                                             <td>
-                                                <?php echo $row["cliente"]; ?>
+                                                <?php echo $row["nombre"]; ?>
                                             </td>
                                             <td>
                                                 <?php echo $row["fecha"]; ?>
@@ -309,8 +304,6 @@ $queryClientes = "SELECT * FROM cliente";
                                                     <button name="edit" id="<?php echo $row['id']; ?>" class="btn btn-primary view_data"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Ver</button>
 
                                                     <button name="view" id="<?php echo $row['id']; ?>" class="btn btn-warning edit_data"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Editar</button>
-
-                                                    <button name="delete" id="<?php echo $row['id']; ?>" class="btn btn-primary delete_class delete_class"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Eliminar</button>
                                                 </div>
                                             </td>
                                         </tr>
