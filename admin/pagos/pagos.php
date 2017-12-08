@@ -9,8 +9,12 @@
     }
 
 require_once '../../php/conexion.php';
- $query = "SELECT * FROM pagos";
+ $query = "SELECT * FROM pago";
  $result = mysqli_query($mysqli, $query);
+
+$queryClientes = "SELECT * FROM cliente";
+ $resultClientes = mysqli_query($mysqli, $queryClientes);
+
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -217,7 +221,17 @@ require_once '../../php/conexion.php';
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Cliente</label>
-                                                    <input type="text" name="nombreDelCliente" id="nombreDelCliente" class="form-control" />
+                                                    <select name="nombreDelCliente" id="nombreDelCliente" class="form-control">
+                                                        <?php
+                                                            while($rowClientes = mysqli_fetch_array($resultClientes))
+                                                            {
+                                                                extract($rowClientes);
+                                                            ?>
+                                                            <option  id="nombreDelCliente" value="<?php echo $rowClientes['id'] ?>"><?php echo $rowClientes['nombre']?></option>
+                                                            <?php
+                                                            }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
