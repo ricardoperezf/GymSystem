@@ -69,22 +69,6 @@
       });
   });
 
-
-  function deleteData(str) {
-      var id = str;
-      $.ajax({
-          type: "GET",
-          url: "delete.php",
-          data: "id=" + id,
-          success: function (data) {
-
-          },
-          error: function (jqXHR, exception) {
-              error(jqXHR, exception, "ELIMINAR");
-          }
-      });
-  }
-
   function error(jqXHR, exception, tipo) {
       var msg = '';
       if (jqXHR.status === 0) {

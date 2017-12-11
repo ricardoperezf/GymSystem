@@ -9,7 +9,7 @@
     }
 
 require_once '../../php/conexion.php';
- $query = "SELECT cliente.nombre, monto, fecha, fecha_vencimiento FROM `pago` INNER JOIN cliente WHERE cliente.id = pago.cliente";
+ $query = "SELECT pago.id as id, cliente.nombre, monto, fecha, fecha_vencimiento FROM `pago` INNER JOIN cliente WHERE cliente.id = pago.cliente";
  $result = mysqli_query($mysqli, $query);
 
 $queryClientes = "SELECT * FROM cliente";
@@ -255,7 +255,7 @@ $queryClientes = "SELECT * FROM cliente";
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Ver cliente</h4>
+                                    <h4 class="modal-title">Ver Pago</h4>
                                 </div>
                                 <div class="modal-body" id="employee_detail">
                                 </div>
