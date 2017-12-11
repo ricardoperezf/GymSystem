@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: sql10.freemysqlhosting.net
--- Tiempo de generación: 08-12-2017 a las 16:49:50
+-- Tiempo de generación: 11-12-2017 a las 19:55:38
 -- Versión del servidor: 5.5.53-0ubuntu0.14.04.1
 -- Versión de PHP: 7.0.22-0ubuntu0.16.04.1
 
@@ -86,8 +86,7 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`id`, `nombre`, `cedula`, `direccion`, `telefono`, `usuario`, `contrasena`, `oficio`, `estatura`, `edad`, `fechadenacimiento`, `objetivos`, `habito_alimenticio`, `enfermedades_lesiones`, `fuma`, `toma`, `hipertenso`, `cirugias_ultimo_ano`, `peso`, `porcentaje_grasa`, `porcentaje_agua`, `imc`, `pecho`, `espalda`, `brazo`, `cintura`, `abdomen`, `cadera`, `muslo`, `pantorrilla`) VALUES
 (1, 'Ricardo  Pérez', '186200584003', 'Lagunilla', '61843689', 'ricardo', 'ricardo', 'Estudiante', '1,80', '19', '25/02/1998', 'Masa', 'Comer', 'Ninguna', 'Ninguna', 'No', 'No', 'No', '69', '12', '12', '12', '80', '㠰', '80', '80', '80', '80', '80', '80'),
 (3, 'Hanzel Anchia', '1111', 'Santa Ana', '18181881', 'Hanzel', 'Hanzel', 'Student', '1,8', '19', '1998-11-11', 'Masa', 'Comer', 'No', 'No', 'No', 'No', 'Nooooooo', '80', '99', '9', '9', '80', '80', '80', '79', '99', '99', '88', '60'),
-(4, 'Joselui Meneses ', 'Comer', 'Pavas', '18181818', 'Joselui Meneses ', 'Joselui Meneses ', 'Student', '1,50', '22', '1111-12-12', 'Comer', 'Comer', 'No', 'No', 'No', 'No', 'No', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80'),
-(10, 'nombre', 'cedula', 'direccion', '123', 'nombre', 'nombre', 'oficio', 'estatura', '19', '1998-02-25', 'objetivo', 'habito', 'enf', 'fuma', 'toma', 'hiper', 'cir', 'peso', '%grasa', '%agua', 'imc', 'pecho', 'espal', 'braz', 'cintur', 'abdom', 'cader', 'muslo', 'pantoriila');
+(4, 'Joselui Meneses ', 'Comer', 'Pavas', '18181818', 'Joselui Meneses ', 'Joselui Meneses ', 'Student', '1,50', '22', '1111-12-12', 'Comer', 'Comer', 'No', 'No', 'No', 'No', 'No', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80');
 
 -- --------------------------------------------------------
 
@@ -121,6 +120,7 @@ CREATE TABLE `pago` (
   `id` int(10) NOT NULL,
   `fecha` date NOT NULL,
   `fecha_vencimiento` date NOT NULL,
+  `monto` int(20) NOT NULL,
   `cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -128,8 +128,11 @@ CREATE TABLE `pago` (
 -- Volcado de datos para la tabla `pago`
 --
 
-INSERT INTO `pago` (`id`, `fecha`, `fecha_vencimiento`, `cliente`) VALUES
-(1, '2017-12-07', '2018-01-07', 1);
+INSERT INTO `pago` (`id`, `fecha`, `fecha_vencimiento`, `monto`, `cliente`) VALUES
+(2, '2017-12-22', '2018-01-22', 40000, 1),
+(3, '2017-01-01', '2017-01-01', 20000, 4),
+(4, '2016-01-01', '2016-01-01', 1, 3),
+(5, '2017-01-01', '2017-01-01', 1, 3);
 
 --
 -- Índices para tablas volcadas
@@ -178,7 +181,7 @@ ALTER TABLE `ejercicio`
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --
