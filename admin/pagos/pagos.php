@@ -9,7 +9,7 @@
     }
 
 require_once '../../php/conexion.php';
- $query = "SELECT cliente.nombre, fecha, fecha_vencimiento FROM `pago` INNER JOIN cliente WHERE cliente.id = pago.cliente";
+ $query = "SELECT cliente.nombre, monto, fecha, fecha_vencimiento FROM `pago` INNER JOIN cliente WHERE cliente.id = pago.cliente";
  $result = mysqli_query($mysqli, $query);
 
 $queryClientes = "SELECT * FROM cliente";
@@ -234,6 +234,8 @@ $queryClientes = "SELECT * FROM cliente";
                                                     </select>
                                                     <label>Fecha de pago</label>
                                                     <input type="date" name="fechaDePago" id="fechaDePago" class="form-control" />
+                                                    <label>Monto</label>
+                                                    <input type="number" name="montoDePago" id="montoDePago" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -269,6 +271,7 @@ $queryClientes = "SELECT * FROM cliente";
                                 <thead>
                                     <tr>
                                         <th>Cliente</th>
+                                        <th>Monto</th>
                                         <th>Fecha de pago</th>
                                         <th>Fecha de vencimiento</th>
                                         <th>Opciones</th>
@@ -277,6 +280,7 @@ $queryClientes = "SELECT * FROM cliente";
                                 <tfoot>
                                     <tr>
                                         <th>Cliente</th>
+                                        <th>Monto</th>
                                         <th>Fecha de pago</th>
                                         <th>Fecha de vencimiento</th>
                                         <th>Opciones</th>
@@ -291,6 +295,9 @@ $queryClientes = "SELECT * FROM cliente";
                                         <tr>
                                             <td>
                                                 <?php echo $row["nombre"]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["monto"]; ?>
                                             </td>
                                             <td>
                                                 <?php echo $row["fecha"]; ?>

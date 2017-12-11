@@ -5,73 +5,24 @@
       $output = '';
       $message = '';
       $nombreDelCliente = mysqli_real_escape_string($connect, $_POST["nombreDelCliente"]);
-      $cedula = mysqli_real_escape_string($connect, $_POST["cedula"]);
-      $direccion = mysqli_real_escape_string($connect, $_POST["direccion"]);
-      $telefono = mysqli_real_escape_string($connect, $_POST["telefono"]);
-      $usuario = $nombreDelCliente;
-      $contrasena = $nombreDelCliente;
-      $oficio = mysqli_real_escape_string($connect, $_POST["oficio"]);
-      $estatura = mysqli_real_escape_string($connect, $_POST["estatura"]);
-      $edad = mysqli_real_escape_string($connect, $_POST["edad"]);
-      $fechaDeNacimiento = mysqli_real_escape_string($connect, $_POST["fechaDeNacimiento"]);
-      $objetivos = mysqli_real_escape_string($connect, $_POST["objetivos"]);
-      $habitosAlimenticios = mysqli_real_escape_string($connect, $_POST["habitosAlimenticios"]);
-      $enfermedadesYLesiones = mysqli_real_escape_string($connect, $_POST["enfermedadesYLesiones"]);
-      $fuma = mysqli_real_escape_string($connect, $_POST["fuma"]);
-      $toma = mysqli_real_escape_string($connect, $_POST["toma"]);
-      $hipertenso = mysqli_real_escape_string($connect, $_POST["hipertenso"]);
-      $cirugias = mysqli_real_escape_string($connect, $_POST["cirugias"]);
-      $peso = mysqli_real_escape_string($connect, $_POST["peso"]);
-      $porcentajeDeGrasa = mysqli_real_escape_string($connect, $_POST["porcentajeDeGrasa"]);
-      $porcentajeDeAgua = mysqli_real_escape_string($connect, $_POST["porcentajeDeAgua"]);
-      $imc = mysqli_real_escape_string($connect, $_POST["imc"]);
-      $pecho = mysqli_real_escape_string($connect, $_POST["pecho"]);
-      $espalda = mysqli_real_escape_string($connect, $_POST["espalda"]);
-      $brazo = mysqli_real_escape_string($connect, $_POST["brazo"]);
-      $cintura = mysqli_real_escape_string($connect, $_POST["cintura"]);
-      $abdomen = mysqli_real_escape_string($connect, $_POST["abdomen"]);
-      $cadera = mysqli_real_escape_string($connect, $_POST["cadera"]);
-      $muslo = mysqli_real_escape_string($connect, $_POST["muslo"]);
-      $pantorrilla = mysqli_real_escape_string($connect, $_POST["pantorrilla"]);
+      $fechaDePago = mysqli_real_escape_string($connect, $_POST["fechaDePago"]);
+      $montoDePago = mysqli_real_escape_string($connect, $_POST["montoDePago"]);
 
      if($_POST["employee_id"] != '')
       {
            $query = "
-           UPDATE cliente
-           SET nombre ='$nombreDelCliente',
-           cedula ='$cedula',
-           direccion ='$direccion',
-           telefono = '$telefono',
-           oficio = '$oficio',
-           estatura = '$estatura',
-           edad = '$edad',
-           fechadenacimiento = '$fechaDeNacimiento',
-           objetivos = '$objetivos',
-           habito_alimenticio = '$habitosAlimenticios',
-           enfermedades_lesiones = '$enfermedadesYLesiones',
-           fuma = '$fuma',
-           toma = '$toma',
-           hipertenso = '$hipertenso',
-           cirugias_ultimo_ano = '$cirugias',
-           peso = '$peso',
-           porcentaje_grasa = '$porcentajeDeGrasa',
-           porcentaje_agua = '$porcentajeDeAgua',
-           imc = '$imc',
-           pecho = '$pecho',
-           espalda = '$espalda',
-           brazo = '$brazo',
-           cintura = '$cintura',
-           abdomen = '$abdomen',
-           cadera = '$cadera',
-           muslo = '$muslo',
-           pantorrilla = '$pantorrilla'
+           UPDATE pago
+           SET fecha ='$fechaDePago',
+           fecha_vencimiento ='$fechaDePago',
+           monto ='$montoDePago',
+           cliente ='$nombreDelCliente',
            WHERE id='".$_POST["employee_id"]."'";
            $message = 'Data Updated';
       }
       else
       {
            $query = "
-           INSERT INTO cliente(nombre, cedula, direccion, telefono, usuario, contrasena, oficio, estatura, edad, fechadenacimiento, objetivos, habito_alimenticio, enfermedades_lesiones, fuma, toma, hipertenso, cirugias_ultimo_ano, peso, porcentaje_grasa, porcentaje_agua, imc, pecho, espalda, brazo, cintura, abdomen, cadera, muslo, pantorrilla) VALUES ('$nombreDelCliente', '$cedula', '$direccion', '$telefono', '$usuario', '$contrasena', '$oficio', '$estatura', '$edad', '$fechaDeNacimiento', '$objetivos', '$habitosAlimenticios', '$enfermedadesYLesiones', '$fuma', '$toma', '$hipertenso', '$cirugias', '$peso', '$porcentajeDeGrasa', '$porcentajeDeAgua', '$imc', '$pecho', '$espalda', '$brazo', '$cintura', '$abdomen', '$cadera', '$muslo', '$pantorrilla');
+           INSERT INTO pago(fecha, fecha_vencimiento, monto, cliente) VALUES ('$fechaDePago', '$fechaDePago', '$montoDePago', '$nombreDelCliente');
            ";
            $message = 'Data Inserted';
       }
