@@ -13,21 +13,26 @@
               },
               dataType: "json",
               success: function (data) {
-                  $('#nombreDelCliente').val(data.nombre);
-                  $('#fechaDePago').val(data.fecha);
+                  console.log(data);
+                  console.log(data.id);
+                  $('#elCliente').val(data.nombre);
+                  $('#fechaDelPago').val(data.fechaPago);
                   $('#montoDePago').val(data.monto);
                   $('#employee_id').val(data.id);
                   $('#insert').val("Editar");
                   $('#add_data_Modal').modal('show');
+              },
+              error: function (jqXHR, exception) {
+                  error(jqXHR, exception, "EDITAR");
               }
           });
       });
       $('#insert_form').on("submit", function (event) {
           event.preventDefault();
-          if ($('#nombreDelCliente').val() == "") {
-              alert("nombreDelCliente is required");
-          } else if ($('#fechaDePago').val() == '') {
-              alert("fechaDePago is required");
+          if ($('#elCliente').val() == "") {
+              alert("elCliente is required");
+          } else if ($('#fechaDelPago').val() == '') {
+              alert("fechaDelPago is required");
           } else if ($('#montoDePago').val() == '') {
               alert("montoDePago is required");
           } else {
@@ -37,6 +42,9 @@
                   data: $('#insert_form').serialize(),
                   beforeSend: function () {
                       $('#insert').val("Ingresando");
+                      console.log($('#elCliente').val());
+                      console.log($('#fechaDelPago').val());
+                      console.log($('#montoDePago').val());
                   },
                   success: function (data) {
                       $('#insert_form')[0].reset();

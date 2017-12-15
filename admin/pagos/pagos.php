@@ -21,7 +21,7 @@ $queryClientes = "SELECT * FROM cliente";
 
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" ccontent="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -221,7 +221,7 @@ $queryClientes = "SELECT * FROM cliente";
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Cliente</label>
-                                                    <select name="nombreDelCliente" id="nombreDelCliente" class="form-control">
+                                                    <select name="elCliente" id="elCliente" class="form-control">
                                                         <?php
                                                             while($rowClientes = mysqli_fetch_array($resultClientes))
                                                             {
@@ -233,7 +233,7 @@ $queryClientes = "SELECT * FROM cliente";
                                                         ?>
                                                     </select>
                                                     <label>Fecha de pago</label>
-                                                    <input type="date" name="fechaDePago" id="fechaDePago" class="form-control" />
+                                                    <input type="date" name="fechaDelPago" id="fechaDelPago" class="form-control" />
                                                     <label>Monto</label>
                                                     <input type="number" name="montoDePago" id="montoDePago" class="form-control" />
                                                 </div>
@@ -369,7 +369,6 @@ $queryClientes = "SELECT * FROM cliente";
             <!-- Custom scripts for this page-->
             <script src="../../js/sb-admin-datatables.min.js"></script>
             <script src="controlador.js"></script>
-            <script src="controladorEliminar.js"></script>
         </div>
     </body>
 

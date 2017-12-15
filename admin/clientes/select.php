@@ -2,7 +2,7 @@
  if(isset($_POST["employee_id"]))
  {
       $output = '';
-      $connect = mysqli_connect("sql10.freemysqlhosting.net", "sql10209158", "Yt5kKkrRBk", "sql10209158");
+      $connect = mysqli_connect("sql10.freemysqlhosting.net", "sql10210755", "I7zaxhTmYJ", "sql10210755");
       $query = "SELECT * FROM cliente WHERE id = '".$_POST["employee_id"]."'";
       $result = mysqli_query($connect, $query);
       $output .= '
