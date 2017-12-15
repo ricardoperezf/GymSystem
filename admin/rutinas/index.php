@@ -9,15 +9,19 @@
     }
 
 require_once '../../php/conexion.php';
- $query = "SELECT * FROM ejercicio";
+ $query = "SELECT rutina.Nombre, cliente.nombre as cliente, ejercicio.nombre as ejercicio1, ejercicio.nombre as ejercicio2, ejercicio.nombre as ejercicio3 FROM `rutina` INNER JOIN cliente INNER JOIN ejercicio WHERE rutina.id_cliente = cliente.id AND rutina.id_ejerc1 = ejercicio.id AND rutina.id_ejerc2 = ejercicio.id AND rutina.id_ejerc3 = ejercicio.id";
  $result = mysqli_query($mysqli, $query);
+
+$queryClientes = "SELECT * FROM cliente";
+ $resultClientes = mysqli_query($mysqli, $queryClientes);
+
 ?>
     <!DOCTYPE html>
     <html lang="en">
 
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" ccontent="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -193,12 +197,12 @@ require_once '../../php/conexion.php';
                     <li class="breadcrumb-item">
                         <a href="#">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item active">Ejercicios</li>
+                    <li class="breadcrumb-item active">Rutinas</li>
                 </ol>
                 <!-- Example DataTables Card-->
                 <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fa fa-table"></i> Información de ejercicios
+                        <i class="fa fa-table"></i> Información de las rutinas
                         <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#add_data_Modal">
                         <span class="glyphiconAgregar glyphicon-plus" aria-hidden="true"></span>
                         </button>
@@ -209,40 +213,33 @@ require_once '../../php/conexion.php';
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Agregar ejercicio
-                                        <ejercicio></ejercicio>
-                                    </h4>
+                                    <h4 class="modal-title">Agregar rutina</h4>
                                 </div>
                                 <div class="modal-body">
                                     <form method="post" id="insert_form">
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>Nombre del ejercicio</label>
-                                                    <input type="text" name="nombre" id="nombre" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Descanso en minutos</label>
-                                                    <input type="number" name="descanso" id="descanso" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Número de series</label>
-                                                    <input type="number" name="numero_series" id="numero_series" class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Número de repeticiones</label>
-                                                    <input type="number" name="numero_repeticiones" id="numero_repeticiones" class="form-control" />
+                                                    <label>Cliente</label>
+                                                    <select name="elCliente" id="elCliente" class="form-control">
+                                                        <?php
+                                                            while($rowClientes = mysqli_fetch_array($resultClientes))
+                                                            {
+                                                                extract($rowClientes);
+                                                            ?>
+                                                            <option  id="nombreDelCliente" value="<?php echo $rowClientes['id'] ?>"><?php echo $rowClientes['nombre']?></option>
+                                                            <?php
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                    <label>Fecha de pago</label>
+                                                    <input type="date" name="fechaDelPago" id="fechaDelPago" class="form-control" />
+                                                    <label>Monto</label>
+                                                    <input type="number" name="montoDePago" id="montoDePago" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
+
                                         <input type="hidden" name="employee_id" id="employee_id" />
                                         <input type="submit" name="insert" id="insert" value="Agregar" class="btn btn-success" />
                                     </form>
@@ -258,7 +255,7 @@ require_once '../../php/conexion.php';
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Ver ejercicio</h4>
+                                    <h4 class="modal-title">Ver Pago</h4>
                                 </div>
                                 <div class="modal-body" id="employee_detail">
                                 </div>
@@ -273,19 +270,23 @@ require_once '../../php/conexion.php';
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Nombre del ejercicio</th>
-                                        <th>Descanso en minutos</th>
-                                        <th>Número de series</th>
-                                        <th>Repeticiones</th>
+                                        <th>Nombre de la rutina</th>
+                                        <th>Cliente</th>
+                                        <th>Ejercicio 1</th>
+                                        <th>Ejercicio 2</th>
+                                        <th>Ejercicio 3</th>
+                                        <th>Ejercicio 4</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Nombre del ejercicio</th>
-                                        <th>Descanso en minutos</th>
-                                        <th>Número de series</th>
-                                        <th>Repeticiones</th>
+                                        <th>Nombre de la rutina</th>
+                                        <th>Cliente</th>
+                                        <th>Ejercicio 1</th>
+                                        <th>Ejercicio 2</th>
+                                        <th>Ejercicio 3</th>
+                                        <th>Ejercicio 4</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </tfoot>
@@ -297,16 +298,19 @@ require_once '../../php/conexion.php';
                                            ?>
                                         <tr>
                                             <td>
-                                                <?php echo $row["nombre"]; ?>
+                                                <?php echo $row["Nombre"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["descanso"]; ?>
+                                                <?php echo $row["cliente"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["numero_series"]; ?>
+                                                <?php echo $row["ejercicio1"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["numero_repeticiones"]; ?>
+                                                <?php echo $row["ejercicio2"]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["ejercicio3"]; ?>
                                             </td>
                                             <td>
                                                 <div class="btn-group" role="group" style="width:270px">
@@ -314,7 +318,6 @@ require_once '../../php/conexion.php';
                                                     <button name="edit" id="<?php echo $row['id']; ?>" class="btn btn-primary view_data"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Ver</button>
 
                                                     <button name="view" id="<?php echo $row['id']; ?>" class="btn btn-warning edit_data"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Editar</button>
-
                                                     <button name="delete" id="<?php echo $row['id']; ?>" class="btn btn-primary delete_class delete_class"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Eliminar</button>
                                                 </div>
                                             </td>

@@ -58,7 +58,7 @@ require_once '../php/conexion.php';
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                        <a class="nav-link" href="../admin/rutinas/index.php">
                             <i class="fa fa-fw fa-wrench"></i>
                             <span class="nav-link-text">Rutinas</span>
                         </a>
