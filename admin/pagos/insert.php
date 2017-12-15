@@ -13,7 +13,7 @@
            $query = "
            UPDATE pago
            SET fecha ='$fechaDePago',
-           fecha_vencimiento ='$fechaDePago',
+           fecha_vencimiento = DATE_ADD('$fechaDePago', INTERVAL 1 MONTH),
            monto ='$montoDePago',
            cliente ='$nombreDelCliente'
            WHERE id='".$_POST["employee_id"]."'";
@@ -22,7 +22,7 @@
       else
       {
            $query = "
-           INSERT INTO pago(fecha, fecha_vencimiento, monto, cliente) VALUES ('$fechaDePago', '$fechaDePago', '$montoDePago', '$nombreDelCliente');
+           INSERT INTO pago(fecha, fecha_vencimiento, monto, cliente) VALUES ('$fechaDePago', DATE_ADD('$fechaDePago', INTERVAL 1 MONTH), '$montoDePago', '$nombreDelCliente');
            ";
            $message = 'Data Inserted';
       }
