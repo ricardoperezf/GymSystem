@@ -4,7 +4,12 @@ $connect = mysqli_connect("sql10.freemysqlhosting.net", "sql10210755", "I7zaxhTm
  if(isset($_POST["employee_id"]))
  {
       //$query = "SELECT * FROM pago WHERE id = '".$_POST["employee_id"]."'";
-     $query = "SELECT rutina.id as id, rutina.Nombre as nombre_rutina, cliente.id as cliente_id, cliente.nombre as cliente, ej1.nombre as ejercicio_1, ej2.nombre as ejercicio_2, ej3.nombre as ejercicio_3, ej4.nombre as ejercicio_4
+     $query = "SELECT rutina.id as id, rutina.Nombre as nombre_rutina,
+     cliente.id as cliente_id, cliente.nombre as cliente,
+     ej1.id as ejid1, ej1.nombre as ejercicio_1,
+     ej2.id as ejid2, ej2.nombre as ejercicio_2,
+     ej3.id as ejid3, ej3.nombre as ejercicio_3,
+     ej4.id as ejid4, ej4.nombre as ejercicio_4
      FROM `rutina`
      INNER JOIN ejercicio ej1
      INNER JOIN ejercicio ej2

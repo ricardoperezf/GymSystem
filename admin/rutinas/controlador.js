@@ -13,12 +13,12 @@
               },
               dataType: "json",
               success: function (data) {
-                  console.log(data);
-                  console.log(data.nombre_rutina);
                   $('#nombreDeLaRutina').val(data.nombre_rutina);
                   $('#elCliente').val(data.cliente_id);
-                  $('#montoDePago').val(data.monto);
-                  $('#employee_id').val(data.id);
+                  $('#ejercicio1').val(data.ejid1);
+                  $('#ejercicio2').val(data.ejid2);
+                  $('#ejercicio3').val(data.ejid3);
+                  $('#ejercicio4').val(data.ejid4);
                   $('#insert').val("Editar");
                   $('#add_data_Modal').modal('show');
               },
@@ -50,7 +50,7 @@
                       $('#insert').val("Ingresando");
                       console.log($('#elCliente').val());
                       console.log($('#nombreDeLaRutina').val());
-                      console.log($('#ejercicio1').val());
+                      console.log($('#employee_id').val());
                   },
                   success: function (data) {
                       $('#insert_form')[0].reset();
