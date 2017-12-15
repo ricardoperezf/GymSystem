@@ -14,9 +14,9 @@
               dataType: "json",
               success: function (data) {
                   console.log(data);
-                  console.log(data.clienteID);
-                  $('#elCliente').val(data.clienteID);
-                  $('#fechaDelPago').val(data.fechaPago);
+                  console.log(data.nombre_rutina);
+                  $('#nombreDeLaRutina').val(data.nombre_rutina);
+                  $('#elCliente').val(data.cliente_id);
                   $('#montoDePago').val(data.monto);
                   $('#employee_id').val(data.id);
                   $('#insert').val("Editar");
@@ -31,10 +31,16 @@
           event.preventDefault();
           if ($('#elCliente').val() == "") {
               alert("elCliente is required");
-          } else if ($('#fechaDelPago').val() == '') {
-              alert("fechaDelPago is required");
-          } else if ($('#montoDePago').val() == '') {
-              alert("montoDePago is required");
+          } else if ($('#nombreDeLaRutina').val() == '') {
+              alert("nombreDeLaRutina is required");
+          } else if ($('#ejercicio1').val() == '') {
+              alert("ejercicio 1 is required");
+          } else if ($('#ejercicio2').val() == '') {
+              alert("ejercicio 2 is required");
+          } else if ($('#ejercicio3').val() == '') {
+              alert("ejercicio 3 is required");
+          } else if ($('#ejercicio4').val() == '') {
+              alert("ejercicio 4 is required");
           } else {
               $.ajax({
                   url: "insert.php",
@@ -43,8 +49,8 @@
                   beforeSend: function () {
                       $('#insert').val("Ingresando");
                       console.log($('#elCliente').val());
-                      console.log($('#fechaDelPago').val());
-                      console.log($('#montoDePago').val());
+                      console.log($('#nombreDeLaRutina').val());
+                      console.log($('#ejercicio1').val());
                   },
                   success: function (data) {
                       $('#insert_form')[0].reset();

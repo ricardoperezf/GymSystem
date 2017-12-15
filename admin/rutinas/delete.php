@@ -3,7 +3,7 @@
 $connect = mysqli_connect("sql10.freemysqlhosting.net", "sql10210755", "I7zaxhTmYJ", "sql10210755");
 
     $id = $_POST['delete_id'];
-    $query = "delete from pago where id = $id";
+    $query = "delete from rutina where id = $id";
       $output = '';
 
     if(mysqli_query($connect, $query)){

@@ -9,11 +9,23 @@
     }
 
 require_once '../../php/conexion.php';
- $query = "SELECT rutina.Nombre, cliente.nombre as cliente, ejercicio.nombre as ejercicio1, ejercicio.nombre as ejercicio2, ejercicio.nombre as ejercicio3 FROM `rutina` INNER JOIN cliente INNER JOIN ejercicio WHERE rutina.id_cliente = cliente.id AND rutina.id_ejerc1 = ejercicio.id AND rutina.id_ejerc2 = ejercicio.id AND rutina.id_ejerc3 = ejercicio.id";
+ $query = "SELECT rutina.id as id, rutina.Nombre as nombre_rutina, cliente.nombre as cliente, ej1.nombre as ejercicio_1, ej2.nombre as ejercicio_2, ej3.nombre as ejercicio_3, ej4.nombre as ejercicio_4 FROM `rutina`  INNER JOIN ejercicio ej1 INNER JOIN ejercicio ej2 INNER JOIN ejercicio ej3 INNER JOIN ejercicio ej4 INNER JOIN cliente WHERE rutina.id_cliente = cliente.id AND rutina.id_ejerc1 = ej1.id AND rutina.id_ejerc2 = ej2.id AND rutina.id_ejerc3 = ej3.id AND rutina.id_ejerc4 = ej4.id";
  $result = mysqli_query($mysqli, $query);
 
 $queryClientes = "SELECT * FROM cliente";
- $resultClientes = mysqli_query($mysqli, $queryClientes);
+$resultClientes = mysqli_query($mysqli, $queryClientes);
+
+$queryEjercicio = "SELECT * FROM ejercicio";
+$resultEjercicio = mysqli_query($mysqli, $queryEjercicio);
+
+$queryEjercicio2 = "SELECT * FROM ejercicio";
+$resultEjercicio2 = mysqli_query($mysqli, $queryEjercicio2);
+
+$queryEjercicio3 = "SELECT * FROM ejercicio";
+$resultEjercicio3 = mysqli_query($mysqli, $queryEjercicio3);
+
+$queryEjercicio4 = "SELECT * FROM ejercicio";
+$resultEjercicio4 = mysqli_query($mysqli, $queryEjercicio4);
 
 ?>
     <!DOCTYPE html>
@@ -220,6 +232,8 @@ $queryClientes = "SELECT * FROM cliente";
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
+                                                    <label>Nombre de la rutina</label>
+                                                    <input type="text" name="nombreDeLaRutina" id="nombreDeLaRutina" class="form-control" />
                                                     <label>Cliente</label>
                                                     <select name="elCliente" id="elCliente" class="form-control">
                                                         <?php
@@ -232,10 +246,54 @@ $queryClientes = "SELECT * FROM cliente";
                                                             }
                                                         ?>
                                                     </select>
-                                                    <label>Fecha de pago</label>
-                                                    <input type="date" name="fechaDelPago" id="fechaDelPago" class="form-control" />
-                                                    <label>Monto</label>
-                                                    <input type="number" name="montoDePago" id="montoDePago" class="form-control" />
+                                                    <label>Ejercicio 1</label>
+                                                    <select name="ejercicio1" id="ejercicio1" class="form-control">
+                                                        <?php
+                                                            while($rowEjercicio = mysqli_fetch_array($resultEjercicio))
+                                                            {
+                                                                extract($rowEjercicio);
+                                                            ?>
+                                                            <option  id="nombreDelCliente" value="<?php echo $rowEjercicio['id'] ?>"><?php echo $rowEjercicio['nombre']?></option>
+                                                            <?php
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                    <label>Ejercicio 2</label>
+                                                    <select name="ejercicio2" id="ejercicio2" class="form-control">
+                                                        <?php
+                                                            while($rowEjercicio2 = mysqli_fetch_array($resultEjercicio2))
+                                                            {
+                                                                extract($rowEjercicio2);
+                                                            ?>
+                                                            <option  id="nombreDelCliente" value="<?php echo $rowEjercicio2['id'] ?>"><?php echo $rowEjercicio2['nombre']?></option>
+                                                            <?php
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                    <label>Ejercicio 3</label>
+                                                    <select name="ejercicio3" id="ejercicio3" class="form-control">
+                                                        <?php
+                                                            while($rowEjercicio3 = mysqli_fetch_array($resultEjercicio3))
+                                                            {
+                                                                extract($rowEjercicio3);
+                                                            ?>
+                                                            <option  id="nombreDelCliente" value="<?php echo $rowEjercicio3['id'] ?>"><?php echo $rowEjercicio3['nombre']?></option>
+                                                            <?php
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                    <label>Ejercicio 4</label>
+                                                    <select name="ejercicio4" id="ejercicio4" class="form-control">
+                                                        <?php
+                                                            while($rowEjercicio4 = mysqli_fetch_array($resultEjercicio4))
+                                                            {
+                                                                extract($rowEjercicio4);
+                                                            ?>
+                                                            <option  id="nombreDelCliente" value="<?php echo $rowEjercicio4['id'] ?>"><?php echo $rowEjercicio4['nombre']?></option>
+                                                            <?php
+                                                            }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -255,7 +313,7 @@ $queryClientes = "SELECT * FROM cliente";
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Ver Pago</h4>
+                                    <h4 class="modal-title">Ver Rutina</h4>
                                 </div>
                                 <div class="modal-body" id="employee_detail">
                                 </div>
@@ -298,19 +356,22 @@ $queryClientes = "SELECT * FROM cliente";
                                            ?>
                                         <tr>
                                             <td>
-                                                <?php echo $row["Nombre"]; ?>
+                                                <?php echo $row["nombre_rutina"]; ?>
                                             </td>
                                             <td>
                                                 <?php echo $row["cliente"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["ejercicio1"]; ?>
+                                                <?php echo $row["ejercicio_1"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["ejercicio2"]; ?>
+                                                <?php echo $row["ejercicio_2"]; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row["ejercicio3"]; ?>
+                                                <?php echo $row["ejercicio_3"]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row["ejercicio_4"]; ?>
                                             </td>
                                             <td>
                                                 <div class="btn-group" role="group" style="width:270px">
