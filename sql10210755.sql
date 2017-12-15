@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: sql10.freemysqlhosting.net
--- Tiempo de generación: 11-12-2017 a las 19:55:38
+-- Tiempo de generación: 15-12-2017 a las 06:22:37
 -- Versión del servidor: 5.5.53-0ubuntu0.14.04.1
 -- Versión de PHP: 7.0.22-0ubuntu0.16.04.1
 
@@ -76,17 +76,18 @@ CREATE TABLE `cliente` (
   `abdomen` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `cadera` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `muslo` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-  `pantorrilla` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
+  `pantorrilla` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `rutinas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`id`, `nombre`, `cedula`, `direccion`, `telefono`, `usuario`, `contrasena`, `oficio`, `estatura`, `edad`, `fechadenacimiento`, `objetivos`, `habito_alimenticio`, `enfermedades_lesiones`, `fuma`, `toma`, `hipertenso`, `cirugias_ultimo_ano`, `peso`, `porcentaje_grasa`, `porcentaje_agua`, `imc`, `pecho`, `espalda`, `brazo`, `cintura`, `abdomen`, `cadera`, `muslo`, `pantorrilla`) VALUES
-(1, 'Ricardo  Pérez', '186200584003', 'Lagunilla', '61843689', 'ricardo', 'ricardo', 'Estudiante', '1,80', '19', '25/02/1998', 'Masa', 'Comer', 'Ninguna', 'Ninguna', 'No', 'No', 'No', '69', '12', '12', '12', '80', '㠰', '80', '80', '80', '80', '80', '80'),
-(3, 'Hanzel Anchia', '1111', 'Santa Ana', '18181881', 'Hanzel', 'Hanzel', 'Student', '1,8', '19', '1998-11-11', 'Masa', 'Comer', 'No', 'No', 'No', 'No', 'Nooooooo', '80', '99', '9', '9', '80', '80', '80', '79', '99', '99', '88', '60'),
-(4, 'Joselui Meneses ', 'Comer', 'Pavas', '18181818', 'Joselui Meneses ', 'Joselui Meneses ', 'Student', '1,50', '22', '1111-12-12', 'Comer', 'Comer', 'No', 'No', 'No', 'No', 'No', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80');
+INSERT INTO `cliente` (`id`, `nombre`, `cedula`, `direccion`, `telefono`, `usuario`, `contrasena`, `oficio`, `estatura`, `edad`, `fechadenacimiento`, `objetivos`, `habito_alimenticio`, `enfermedades_lesiones`, `fuma`, `toma`, `hipertenso`, `cirugias_ultimo_ano`, `peso`, `porcentaje_grasa`, `porcentaje_agua`, `imc`, `pecho`, `espalda`, `brazo`, `cintura`, `abdomen`, `cadera`, `muslo`, `pantorrilla`, `rutinas`) VALUES
+(3, 'Hanzel Anchia', '1111', 'Santa Ana', '18181881', 'Hanzel', 'Hanzel', 'Student', '1,8', '19', '1998-11-11', 'Masa', 'Comer', 'No', 'No', 'No', 'No', 'Nooooooo', '80', '99', '9', '9', '80', '80', '80', '79', '99', '99', '88', '60', 0),
+(4, 'Joselui Meneses ', '11112', 'Pavas', '18181818', 'Joselui Meneses ', 'Joselui Meneses ', 'Student', '1,50', '22', '1111-12-12', 'Comer', 'Comer', 'No', 'No', 'No', 'No', 'No', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', '80', 0),
+(13, 'Ricardo PÃ©rez', '186200584003', 'Lagunilla', '61843689', 'Ricardo PÃ©rez', 'Ricardo PÃ©rez', 'Student', '1.80', '19', '1998-02-25', 'Masa', 'Comer', 'None', 'no', 'no', 'no', 'no', '80', '1', '1', '1', '80', '80', '80', '80', '80', '80', '80', '80', 0);
 
 -- --------------------------------------------------------
 
@@ -129,10 +130,34 @@ CREATE TABLE `pago` (
 --
 
 INSERT INTO `pago` (`id`, `fecha`, `fecha_vencimiento`, `monto`, `cliente`) VALUES
-(2, '2017-12-22', '2018-01-22', 40000, 1),
-(3, '2017-01-01', '2017-01-01', 20000, 4),
-(4, '2016-01-01', '2016-01-01', 1, 3),
-(5, '2017-01-01', '2017-01-01', 1, 3);
+(4, '2016-01-01', '2016-02-01', 11111, 3),
+(6, '2012-12-23', '2013-01-23', 23000, 4),
+(8, '2019-12-12', '2020-01-12', 23400, 13),
+(9, '2012-12-12', '2013-01-12', 12, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rutina`
+--
+
+CREATE TABLE `rutina` (
+  `id` int(11) NOT NULL,
+  `id_ejerc1` int(11) NOT NULL,
+  `id_ejerc2` int(11) NOT NULL,
+  `id_ejerc3` int(11) NOT NULL,
+  `id_ejerc4` int(11) NOT NULL,
+  `Nombre` varchar(100) NOT NULL,
+  `id_cliente` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `rutina`
+--
+
+INSERT INTO `rutina` (`id`, `id_ejerc1`, `id_ejerc2`, `id_ejerc3`, `id_ejerc4`, `Nombre`, `id_cliente`) VALUES
+(5, 2, 1, 2, 1, 'Rutina1', 4),
+(7, 2, 2, 1, 2, 'Rutina3', 3);
 
 --
 -- Índices para tablas volcadas
@@ -164,6 +189,17 @@ ALTER TABLE `pago`
   ADD KEY `clienteid_pago_cliente` (`cliente`);
 
 --
+-- Indices de la tabla `rutina`
+--
+ALTER TABLE `rutina`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_ejerc1` (`id_ejerc1`),
+  ADD KEY `id_ejerc2` (`id_ejerc2`),
+  ADD KEY `id_ejerc3` (`id_ejerc3`),
+  ADD KEY `id_ejerc4` (`id_ejerc4`),
+  ADD KEY `id_cliente` (`id_cliente`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -171,17 +207,22 @@ ALTER TABLE `pago`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `ejercicio`
 --
 ALTER TABLE `ejercicio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT de la tabla `rutina`
+--
+ALTER TABLE `rutina`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Restricciones para tablas volcadas
 --
@@ -191,6 +232,16 @@ ALTER TABLE `pago`
 --
 ALTER TABLE `pago`
   ADD CONSTRAINT `clienteid_pago_cliente` FOREIGN KEY (`cliente`) REFERENCES `cliente` (`id`);
+
+--
+-- Filtros para la tabla `rutina`
+--
+ALTER TABLE `rutina`
+  ADD CONSTRAINT `rutina_ibfk_5` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`),
+  ADD CONSTRAINT `rutina_ibfk_1` FOREIGN KEY (`id_ejerc1`) REFERENCES `ejercicio` (`id`),
+  ADD CONSTRAINT `rutina_ibfk_2` FOREIGN KEY (`id_ejerc2`) REFERENCES `ejercicio` (`id`),
+  ADD CONSTRAINT `rutina_ibfk_3` FOREIGN KEY (`id_ejerc3`) REFERENCES `ejercicio` (`id`),
+  ADD CONSTRAINT `rutina_ibfk_4` FOREIGN KEY (`id_ejerc4`) REFERENCES `ejercicio` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
