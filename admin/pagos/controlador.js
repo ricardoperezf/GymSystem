@@ -14,8 +14,8 @@
               dataType: "json",
               success: function (data) {
                   console.log(data);
-                  console.log(data.id);
-                  $('#elCliente').val(data.nombre);
+                  console.log(data.clienteID);
+                  $('#elCliente').val(data.clienteID);
                   $('#fechaDelPago').val(data.fechaPago);
                   $('#montoDePago').val(data.monto);
                   $('#employee_id').val(data.id);
