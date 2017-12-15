@@ -311,6 +311,7 @@ $queryClientes = "SELECT * FROM cliente";
                                                     <button name="edit" id="<?php echo $row['id']; ?>" class="btn btn-primary view_data"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Ver</button>
 
                                                     <button name="view" id="<?php echo $row['id']; ?>" class="btn btn-warning edit_data"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Editar</button>
+                                                    <button name="delete" id="<?php echo $row['id']; ?>" class="btn btn-primary delete_class delete_class"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Eliminar</button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -369,6 +370,7 @@ $queryClientes = "SELECT * FROM cliente";
             <!-- Custom scripts for this page-->
             <script src="../../js/sb-admin-datatables.min.js"></script>
             <script src="controlador.js"></script>
+            <script src="controladorEliminar.js"></script>
         </div>
     </body>
 

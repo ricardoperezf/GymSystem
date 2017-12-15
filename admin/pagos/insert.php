@@ -15,7 +15,7 @@
            SET fecha ='$fechaDePago',
            fecha_vencimiento ='$fechaDePago',
            monto ='$montoDePago',
-           cliente ='$nombreDelCliente',
+           cliente ='$nombreDelCliente'
            WHERE id='".$_POST["employee_id"]."'";
            $message = 'Data Updated';
       }
