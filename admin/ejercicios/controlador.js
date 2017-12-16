@@ -12,6 +12,9 @@
                   employee_id: employee_id
               },
               dataType: "json",
+              beforeSend: function () {
+                  console.log("EMPLOYEE ID ES " + employee_id);
+              },
               success: function (data) {
                   $('#nombre').val(data.nombre);
                   $('#descanso').val(data.descanso);
@@ -40,6 +43,7 @@
                   data: $('#insert_form').serialize(),
                   beforeSend: function () {
                       $('#insert').val("Agregando");
+                      console.log("EMPLOYEE ID ES " + employee_id.value);
                   },
                   success: function (data) {
                       $('#insert_form')[0].reset();

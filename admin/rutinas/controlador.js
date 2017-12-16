@@ -12,6 +12,9 @@
                   employee_id: employee_id
               },
               dataType: "json",
+              beforeSend: function () {
+                  console.log("EMPLOYEE ID ES " + employee_id);
+              },
               success: function (data) {
                   $('#nombreDeLaRutina').val(data.nombre_rutina);
                   $('#elCliente').val(data.cliente_id);
@@ -19,6 +22,7 @@
                   $('#ejercicio2').val(data.ejid2);
                   $('#ejercicio3').val(data.ejid3);
                   $('#ejercicio4').val(data.ejid4);
+                  $('#employee_id').val(data.id);
                   $('#insert').val("Editar");
                   $('#add_data_Modal').modal('show');
               },
@@ -29,28 +33,26 @@
       });
       $('#insert_form').on("submit", function (event) {
           event.preventDefault();
-          if ($('#elCliente').val() == "") {
-              alert("elCliente is required");
-          } else if ($('#nombreDeLaRutina').val() == '') {
+          if ($('#nombreDeLaRutina').val() == "") {
               alert("nombreDeLaRutina is required");
+          } else if ($('#elCliente').val() == '') {
+              alert("elCliente is required");
           } else if ($('#ejercicio1').val() == '') {
-              alert("ejercicio 1 is required");
+              alert("ejercicio1 is required");
           } else if ($('#ejercicio2').val() == '') {
-              alert("ejercicio 2 is required");
+              alert("ejercicio2  is required");
           } else if ($('#ejercicio3').val() == '') {
-              alert("ejercicio 3 is required");
+              alert("ejercicio3 is required");
           } else if ($('#ejercicio4').val() == '') {
-              alert("ejercicio 4 is required");
+              alert("ejercicio4 is required");
           } else {
               $.ajax({
                   url: "insert.php",
                   method: "POST",
                   data: $('#insert_form').serialize(),
                   beforeSend: function () {
-                      $('#insert').val("Ingresando");
-                      console.log($('#elCliente').val());
-                      console.log($('#nombreDeLaRutina').val());
-                      console.log($('#employee_id').val());
+                      $('#insert').val("Agregando");
+                      console.log("EMPLOYEE ID ES " + employee_id.value);
                   },
                   success: function (data) {
                       $('#insert_form')[0].reset();
