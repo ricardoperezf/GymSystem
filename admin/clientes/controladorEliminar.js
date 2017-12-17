@@ -1,4 +1,5 @@
- $(document).ready(function () {
+//funcion eliminar valor
+$(document).ready(function () {
      $(".delete_class").click(function () {
          var del_id = $(this).attr('id');
          $.ajax({

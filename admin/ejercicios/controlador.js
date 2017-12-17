@@ -1,4 +1,5 @@
-  $(document).ready(function () {
+//siguiente funcion para encontrar los valores para editar
+$(document).ready(function () {
       $('#add').click(function () {
           $('#insert').val("Insert");
           $('#insert_form')[0].reset();
@@ -26,6 +27,7 @@
               }
           });
       });
+    //siguiente funcion para agregar
       $('#insert_form').on("submit", function (event) {
           event.preventDefault();
           if ($('#nombre').val() == "") {
@@ -58,6 +60,7 @@
               });
           }
       });
+    //siguiente funcion ver los datos
       $(document).on('click', '.view_data', function () {
           var employee_id = $(this).attr("id");
           if (employee_id != '') {
@@ -76,22 +79,7 @@
       });
   });
 
-
-  function deleteData(str) {
-      var id = str;
-      $.ajax({
-          type: "GET",
-          url: "delete.php",
-          data: "id=" + id,
-          success: function (data) {
-
-          },
-          error: function (jqXHR, exception) {
-              error(jqXHR, exception, "ELIMINAR");
-          }
-      });
-  }
-
+//funcion de reconocer error
   function error(jqXHR, exception, tipo) {
       var msg = '';
       if (jqXHR.status === 0) {
